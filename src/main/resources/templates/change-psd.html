@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+
+    <meta charset="utf-8">
+    <title>修改密码</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap"
+          rel="stylesheet">
+
+
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="assets/css/jquery-ui.css">
+
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="assets/dist/metismenu/metisMenu.min.css">
+
+    <link rel="stylesheet" href="assets/css/animate.css">
+
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <link rel="stylesheet" href="assets/css/responsive.css">
+
+    <link rel="shortcut icon" type="image/png" href="assets/img/favicon.ico">
+
+</head>
+<body>
+<div id="preloader"></div>
+
+<div th:replace="common::commonheader"></div>
+
+
+<div class="cryptodash-full-wrapper">
+    <div class="crypto-dash-sidenav">
+        <div id="sideNavWrapper" class="active">
+
+        <div th:replace="common::commonleftnav"></div>
+
+            <div id="page-content-wrapper" class="dashboard-content">
+
+                <div class="page-content inset">
+                    <div class="crypto-container">
+                        <div class="row">
+                            <div class="col-xl-6">
+                                <ul class="nav">
+                                    <li class="nav-item">
+                                        <a class="nav-link h2" href="/info">我的信息</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link active h2" href="/changePassword">修改密码</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link h2" href="/avatar">修改头像</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link h2" href="/address">收货管理</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 offset-md-3">
+                                <form id="form-change">
+                                    <div class="form-group">
+                                        <label for="oldPassword">原密码</label>
+                                        <input type="password" class="form-control input-medium" id="oldPassword"
+                                               aria-describedby="emailHelp" placeholder="请输入原密码"
+                                               name="oldPassword">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="newPassword">新密码</label>
+                                        <input type="password" class="form-control input-medium" id="newPassword"
+                                               placeholder="请输入新密码" name="newPassword">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="newPassword">确认新密码</label>
+                                        <input type="password" class="form-control input-medium" id="okNewPassword"
+                                               placeholder="确认新密码" name="okNewPassword"/>
+                                        <span id="error-msg" style="color: red"> </span>
+                                    </div>
+                                    <button type="submit" id="btn-change" class="btn btn-primary btn-small">确认修改
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<div th:replace="common::commonscipt"></div>
+<script type="text/javascript">
+    $(function () {
+        $("#btn-change").click(function () {
+            var newPasswordText = $("#newPassword").val();
+            var okNewPasswordText = $("#okNewPassword").val();
+            if (newPasswordText !== okNewPasswordText) {
+                $("#error-msg").text("输入的新密码与原密码不匹配!");
+                return false;
+            }
+            $("#error-msg").text("");
+            $.ajax({
+                url: "/users/changePassword",
+                data: $("#form-change").serialize(),
+                type: "POST",
+                dataType: "JSON",
+                success: function (json) {
+                    if (json.state === 200) {
+                        alert("修改成功!");
+                        location.href = "/info";
+                    } else {
+                        alert("原密码不正确!");
+                        location.href = "/changePassword";
+                    }
+                },
+                error: function (xhr) {
+                    alert("修改密码时时产生了未知的异常！" + xhr.status);
+                }
+            });
+            return false;
+        });
+    });
+</script>
+</body>
+</html>

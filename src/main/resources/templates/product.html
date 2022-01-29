@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+
+    <meta charset="utf-8">
+    <title>商品展示</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap"
+          rel="stylesheet">
+
+
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="assets/css/jquery-ui.css">
+
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="assets/dist/metismenu/metisMenu.min.css">
+
+    <link rel="stylesheet" href="assets/css/animate.css">
+
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="assets/css/product.css">
+
+    <link rel="shortcut icon" type="image/png" href="assets/img/favicon.ico">
+
+
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div id="preloader"></div>
+
+<div th:replace="common::commonheader"></div>
+
+<div class="cryptodash-full-wrapper">
+    <div class="crypto-dash-sidenav">
+        <div id="sideNavWrapper" class="active">
+
+            <div th:replace="common::commonleftnav"></div>
+            <div class="container">
+                <div class="col-md-offset-1 col-md-10">
+                    <div class="col-md-6">
+                        <div class="col-md-12">
+                            <img id="product-image" src="assets/img/portal/11DELLran7000R1605Ssilvery/1_big.png"
+                                 class="img-responsive"/>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <h3 id="product-title" class="col-md-12 title-row-1"></h3>
+                        <p id="product-sell-point" class="col-md-12 text-row-1"><small></small></p>
+                        <div class="col-md-12 price-bar">
+                            <small>售价：</small> ¥<span id="product-price"></span>
+                            <div><small>*退货补运费 *7天无理由退货 *24小时快速退款 </small></div>
+                        </div>
+                        <form class="form-inline product-form col-md-12" role="form">
+                            <div class="col-md-12 form-space">
+                                <label for="num">数量：</label>
+                                <input id="numDown" type="button" value="-" class="num-btn"/>
+                                <input id="num" type="text" size="2" readonly="readonly" class="num-text" value="1">
+                                <input id="numUp" class="num-btn" type="button" value="+"/>
+                            </div>
+                            <div class="col-md-12 form-space">
+                                <p><small><b>书城</b>发货并提供售后服务,今日下单,明日送达</small></p>
+                            </div>
+                            <div class="col-md-12 form-space">
+                                <input class="btn btn-primary btn-lg btn-block" type="button" value="立即购买">
+                            </div>
+                            <div class="col-md-12 form-space">
+                                <button id="btn-add-to-cart" type="button" class="btn btn-default go-cart"><span
+                                        class="fa fa-cart-plus"></span> 加入购物车
+                                </button>
+                                <button id="btn-add-to-collect" type="button" class="btn btn-default"><span
+                                        class="fa fa-heart-o"></span> 加入收藏
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div th:replace="common::commonscipt"></div>
+
+<script type="text/javascript">
+    let id = $.getUrlParam("id");
+    console.log("id=" + id);
+    $(document).ready(function () {
+        $.ajax({
+            url: "/products/" + id + "/details",
+            type: "GET",
+            dataType: "JSON",
+            success: function (json) {
+                if (json.state === 200) {
+                    console.log("title=" + json.data.title);
+                    $("#product-title").html(json.data.title);
+                    $("#product-sell-point").html(json.data.sellPoint);
+                    $("#product-price").html(json.data.price);
+                    $("#product-image").attr("src", "assets/" + json.data.image + "collect.png");
+                } else if (json.state === 4004) { // 商品数据不存在的异常
+                    location.href = "/index";
+                } else {
+                    alert("获取商品信息失败！" + json.message);
+                }
+            }
+        });
+        return false;
+    });
+
+    $("#btn-add-to-cart").click(function () {
+        $.ajax({
+            url: "/carts/addToCart",
+            type: "POST",
+            data: {
+                "productId": id,
+                "amount": $("#num").val(),
+            },
+            dataType: "JSON",
+            success: function (json) {
+                if (json.state === 200) {
+                    alert("添加购物车成功！");
+                } else {
+                    alert("添加购物车失败")
+                }
+            },
+            error: function (xhr) {
+                alert("添加购物车产生未知异常" + xhr.message);
+            }
+        });
+        return false;
+    });
+</script>
+</body>
+</html>

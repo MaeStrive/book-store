@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+
+    <meta charset="utf-8">
+    <title>新增收货地址</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap"
+          rel="stylesheet">
+
+
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="assets/css/jquery-ui.css">
+
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="assets/dist/metismenu/metisMenu.min.css">
+
+    <link rel="stylesheet" href="assets/css/animate.css">
+
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <link rel="stylesheet" href="assets/css/responsive.css">
+
+    <link rel="shortcut icon" type="image/png" href="assets/img/favicon.ico">
+
+</head>
+<body>
+<div id="preloader"></div>
+
+<div th:replace="common::commonheader"></div>
+
+
+<div class="cryptodash-full-wrapper">
+    <div class="crypto-dash-sidenav">
+        <div id="sideNavWrapper" class="active">
+            <div th:replace="common::commonleftnav"></div>
+            <div class="row">
+                <div class="col-xl-6">
+                    <ul class="nav">
+                        <li class="nav-item">
+                            <a class="nav-link h2" href="/info">我的信息</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link h2" href="/changePassword">修改密码</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link h2" href="/avatar">修改头像</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link h2 active" href="/address">收货管理</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="panel-body">
+                <!--新增收货地址表单开始-->
+                <form id="form-add-new-address" class="form-horizontal" role="form">
+                    <div class="form-group">
+                        <label class="col-md-2 control-label"><span class="txtred">*</span>收货人：</label>
+                        <div class="col-md-8">
+                            <input name="name" type="text" class="form-control" placeholder="请输入收货人姓名">
+                        </div>
+                    </div>
+                    <div class="address_content" data-toggle="distpicker">
+                        <div class="form-group">
+                            <label class="col-md-2 control-label"><span class="txtred">*</span>省/直辖市：</label>
+                            <div class="col-md-3">
+                                <select id="province-list" name="provinceCode" class="form-control"
+                                        data-province="---- 选择省 ----"></select>
+                            </div>
+                            <label class="col-md-2 control-label"><span class="txtred">*</span>城市：</label>
+                            <div class="col-md-3">
+                                <select id="city-list" name="cityCode" class="form-control"
+                                        data-city="---- 选择市 ----"></select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-2 control-label"><span class="txtred">*</span>区县：</label>
+                            <div class="col-md-3">
+                                <select id="area-list" name="areaCode" class="form-control"
+                                        data-district="---- 选择区 ----"></select>
+                            </div>
+                            <label class="col-md-2 control-label">邮政编码：</label>
+                            <div class="col-md-3">
+                                <input name="zip" type="text" class="form-control" placeholder="请输入邮政编码">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label"><span class="txtred">*</span>详细地址：</label>
+                        <div class="col-md-8">
+                            <textarea name="address" class="form-control" rows="3"
+                                      placeholder="输入详细的收货地址，小区名称、门牌号等"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label"><span class="txtred">*</span>手机：</label>
+                        <div class="col-md-3">
+                            <input name="phone" type="text" class="form-control" placeholder="请输入手机号码">
+                        </div>
+                        <label class="col-md-2 control-label">固话：</label>
+                        <div class="col-md-3">
+                            <input name="tel" type="text" class="form-control" placeholder="请输入固定电话号码">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">地址类型：</label>
+                        <div class="col-md-8">
+                            <input name="tag" type="text" class="form-control" placeholder="请输入地址类型，如：家、公司或者学校">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label"><a href="/address">返回</a>&nbsp;&nbsp;&nbsp;</label>
+                        <div class="col-sm-10">
+                            <input id="btn-add-new-address" type="button" class="col-md-1 btn btn-primary" value="保存"/>
+                            <input type="reset" class="col-md-offset-1 col-md-1 btn btn-primary" value="重置"/>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div th:replace="common::commonscipt"></div>
+<script type="text/javascript">
+    $(function () {
+        /*value 属性用于表示当前区域的code值*/
+        let defaultOption = "<option value='0'>---- 请选择 ----</option>";
+        showProvinceList();
+        $("#city-list").append(defaultOption);
+        $("#area-list").append(defaultOption);
+        /** change():监听某个控件一旦发生改变 就会触发*/
+        $("#province-list").change(function () {
+            // 获取行政区的父代码
+            let parent = $("#province-list").val();
+            // 清空select下拉列表的所有 option元素
+            $("#city-list").empty();
+            $("#area-list").empty();
+            //填充默认值
+            $("#city-list").append(defaultOption);
+            $("#area-list").append(defaultOption);
+            if (parent === 0) {
+                return;
+            }
+            $.ajax({
+                url: "/district",
+                type: "POST",
+                data: "parent=" + parent,
+                dataType: "JSON",
+                success: function (json) {
+                    if (json.state === 200) {
+                        let list = json.data;
+                        for (let i = 0; i < list.length; i++) {
+                            let opt = "<option value='" + list[i].code + "'>" + list[i].name + "</option>";
+                            $("#city-list").append(opt);
+                        }
+                    } else {
+                        alert("信息加载失败！");
+                    }
+                }
+            });
+        });
+
+        $("#city-list").change(function () {
+            // 获取行政区的父代码
+            let parent = $("#city-list").val();
+            // 清空select下拉列表的所有 option元素
+            $("#area-list").empty();
+            //填充默认值
+            $("#area-list").append(defaultOption);
+            if (parent === 0) {
+                return;
+            }
+            $.ajax({
+                url: "/district",
+                type: "POST",
+                data: "parent=" + parent,
+                dataType: "JSON",
+                success: function (json) {
+                    if (json.state === 200) {
+                        let list = json.data;
+                        for (let i = 0; i < list.length; i++) {
+                            let opt = "<option value='" + list[i].code + "'>" + list[i].name + "</option>";
+                            $("#area-list").append(opt);
+                        }
+                    } else {
+                        alert("信息加载失败！");
+                    }
+                }
+            });
+        });
+
+        function showProvinceList() {
+            $.ajax({
+                url: "/district",
+                type: "POST",
+                data: "parent=86",
+                dataType: "JSON",
+                success: function (json) {
+                    if (json.state === 200) {
+                        let list = json.data;
+                        for (let i = 0; i < list.length; i++) {
+                            let opt = "<option value='" + list[i].code + "'>" + list[i].name + "</option>";
+                            $("#province-list").append(opt);
+                        }
+                    } else {
+                        alert("信息加载失败！");
+                    }
+                }
+            });
+            return false;
+        }
+
+        $("#btn-add-new-address").click(function () {
+            $.ajax({
+                url: "/address/addNewAddress",
+                type: "POST",
+                data: $("#form-add-new-address").serialize(),
+                dataType: "JSON",
+                success: function (json) {
+                    if (json.state === 200) {
+                        alert("新增收货地址成功!");
+                        location.href = "/addAddress";
+                    } else {
+                        alert("新增收货地址失败!");
+                    }
+                },
+                error: function (xhr) {
+                    alert("新增收货地址产生未知的异常!" + xhr.status);
+                }
+            });
+            return false;
+        });
+    });
+</script>
+</body>
+</html>

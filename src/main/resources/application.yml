@@ -1,0 +1,16 @@
+spring:
+  datasource:
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/store?characterEncoding=utf-8&useSSL=false&serverTimezone=UTC&rewriteBatchedStatements=true
+      username: root
+      password: 123456
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 15MB
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+user:
+  address:
+    max-count: 20

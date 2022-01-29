@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+
+    <meta charset="utf-8">
+    <title>收货管理</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap"
+          rel="stylesheet">
+
+
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="assets/css/jquery-ui.css">
+
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="assets/dist/metismenu/metisMenu.min.css">
+
+    <link rel="stylesheet" href="assets/css/animate.css">
+
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <link rel="stylesheet" href="assets/css/responsive.css">
+
+    <link rel="shortcut icon" type="image/png" href="assets/img/favicon.ico">
+
+</head>
+<body>
+<div id="preloader"></div>
+
+<div th:replace="common::commonheader"></div>
+
+
+<div class="cryptodash-full-wrapper">
+    <div class="crypto-dash-sidenav">
+        <div id="sideNavWrapper" class="active">
+            <div th:replace="common::commonleftnav"></div>
+            <div class="row">
+                <div class="col-xl-6">
+                    <ul class="nav">
+                        <li class="nav-item">
+                            <a class="nav-link h2" href="/info">我的信息</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link h2" href="/changePassword">修改密码</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link h2" href="/avatar">修改头像</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link h2 active" href="/address">收货管理</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="panel-body">
+                <!--地址显示-->
+                <table class="table table-striped">
+                    <caption>收货地址列表</caption>
+                    <thead>
+                    <tr>
+                        <th>地址类型</th>
+                        <th>收货人姓名</th>
+                        <th>详细地址</th>
+                        <th>联系电话</th>
+                        <th colspan="3">操作</th>
+                    </tr>
+                    </thead>
+                    <tbody id="address-list">
+
+                    </tbody>
+                </table>
+                <a href="/addAddress" class="btn btn-sm btn-primary"><span class="fa fa-plus"></span>新增收货地址</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div th:replace="common::commonscipt"></div>
+<script type="text/javascript">
+    $(function () {
+        showAddressList();
+    });
+
+    function showAddressList() {
+        $.ajax({
+            url: "/address/addressList",
+            type: "POST",
+            dataType: "JSON",
+            success: function (json) {
+                if (json.state === 200) {
+                    let list = json.data;
+                    for (let i = 0; i < list.length; i++) {
+                        let tr = '<tr>'
+                            + '<td>#{tag}</td>'
+                            + '<td>#{name}</td>'
+                            + '<td>#{address}</td>'
+                            + '<td>#{phone}</td>'
+                            + '<td><a class="btn btn-xs btn-info"><span class="fa fa-edit"></span> 修改</a></td>'
+                            + '<td><a onclick="deleteAddress(#{id})" class="btn btn-xs add-del btn-info"><span class="fa fa-trash-o"></span> 删除</a></td>'
+                            + '<td><a onclick="setDefault(|{id}|)" class="btn btn-xs add-def btn-default">设为默认</a></td>'
+                            + '</tr>';
+                        /*正则表达式*/
+                        tr = tr.replace(/#{tag}/g, list[i].tag);
+                        tr = tr.replace(/#{name}/g, list[i].name);
+                        /*串*/
+                        tr = tr.replace("#{phone}", list[i].phone);
+                        tr = tr.replace("#{address}", list[i].provinceName + list[i].cityName + list[i].areaName + list[i].address);
+                        tr = tr.replace("#{id}", list[i].addressId);
+                        tr = tr.replace("|{id}|", list[i].addressId);
+
+                        $("#address-list").append(tr);
+                    }
+                    /*将某个元素隐藏*/
+                    $(".add-def:eq(0)").hide();
+                } else {
+                    alert("用户地址信息加载失败");
+                }
+            }
+        });
+    }
+
+    function setDefault(id) {
+        $.ajax({
+            url: "/address/" + id + "/setDefault",
+            type: "POST",
+            dataType: "JSON",
+            success: function (json) {
+                if (json.state === 200) {
+                    /** 重新刷新收货地址页面*/
+                    $("#address-list").empty();
+                    showAddressList();
+                } else {
+                    alert("修改默认地址失败");
+                }
+            },
+            error: function (xhr) {
+                alert("修改默认地址产生未知的异常" + xhr.message);
+            }
+        });
+        return false;
+    }
+
+    function deleteAddress(id) {
+        $.ajax({
+            url: "/address/" + id + "/delete",
+            type: "POST",
+            dataType: "JSON",
+            success: function (json) {
+                if (json.state === 200) {
+                    /** 重新加载页面*/
+                    $("#address-list").empty();
+                    showAddressList();
+                } else {
+                    alert("删除收货地址失败");
+                }
+            },
+            error: function (xhr) {
+                alert("删除收货地址时产生未知的异常" + xhr.message);
+            }
+        });
+        return false;
+    }
+
+</script>
+</body>
+</html>

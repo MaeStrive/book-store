@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+
+    <meta charset="utf-8">
+    <title>个人信息</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap"
+          rel="stylesheet">
+
+
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="assets/css/jquery-ui.css">
+
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="assets/dist/metismenu/metisMenu.min.css">
+
+    <link rel="stylesheet" href="assets/css/animate.css">
+
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <link rel="stylesheet" href="assets/css/responsive.css">
+
+    <link rel="shortcut icon" type="image/png" href="assets/img/favicon.ico">
+
+</head>
+<body>
+<div id="preloader"></div>
+
+<div th:replace="common::commonheader"></div>
+
+<div class="cryptodash-full-wrapper">
+    <div class="crypto-dash-sidenav">
+        <div id="sideNavWrapper" class="active">
+
+            <div id="sidebar-wrapper">
+                <nav class="sidebar-nav">
+                    <ul class="metismenu" id="menu3">
+                        <li>
+                            <a href="/index">
+                                <i class="fa fa-tachometer" aria-hidden="true"></i>
+                                <span class="msm-text">首页</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/buySell">
+                                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                                <span class="msm-text">购物</span>
+                            </a>
+                        </li>
+                        <li class="mm-active">
+                            <a href="/info">
+                                <i class="fa fa-info-circle" aria-hidden="true"></i>
+                                <span class="msm-text">信息</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/signOut">
+                                <i class="fa fa-sign-out" aria-hidden="true"></i>
+                                <span class="msm-text">注销</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div id="page-content-wrapper" class="dashboard-content">
+
+                <div class="crypto-container">
+                    <div class="row">
+                        <div class="col-xl-10">
+                            <ul class="nav">
+                                <li class="nav-item">
+                                    <a class="nav-link active h2" href="">我的信息</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link h2" href="/changePassword">修改密码</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link h2" href="/avatar">修改头像</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link h2" href="/address">收货管理</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-9 offset-sm-3">
+                            <form class="form-horizontal" id="form-date" action="" method="post">
+                                <div class="form-group">
+                                    <label for="inputEmail3" class="col-sm-2 control-label">用户名</label>
+                                    <div class="col-sm-6">
+                                        <input type="text" class="form-control" id="inputEmail3"
+                                               name="username" th:placeholder="${session.username}" readonly>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone" class="col-sm-2 control-label">手机号</label>
+                                    <div class="col-sm-6">
+                                        <input type="text" class="form-control" id="phone"
+                                               name="phone">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email" class="col-sm-2 control-label">邮箱</label>
+                                    <div class="col-sm-6">
+                                        <input type="email" class="form-control" id="email"
+                                               name="email">
+                                    </div>
+                                </div>
+                                <div class="radio">
+                                    <label class="radio-inline">
+                                        <input type="radio" name="gender" id="gender-male" value="1">
+                                        男
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label class="radio-inline">
+                                        <input type="radio" name="gender" id="gender-female" value="0">
+                                        女
+                                    </label>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-offset-2 col-sm-6">
+                                        <button type="submit" id="date-btn" class="btn btn-default">修改</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div th:replace="common::commonscipt"></div>
+<script type="text/javascript">
+    $(function () {
+        $("#date-btn").click(function () {
+            $.ajax({
+                url: "/users/changeInfo",
+                data: $("#form-date").serialize(),
+                type: "POST",
+                dataType: "JSON",
+                success: function (json) {
+                    if (json.state === 200) {
+                        alert("用户信息修改成功!");
+                        location.href = "/info";
+                    } else {
+                        alert("用户信息修改失败!");
+                        location.href = "/info";
+                    }
+                },
+                error: function (xhr) {
+                    alert("修改用户信息时产生了未知的异常！" + xhr.status);
+                }
+            });
+            return false;
+        });
+        $.ajax({
+            url: "/users/getByUserId",
+            data: $("#form-date").serialize(),
+            type: "GET",
+            dataType: "JSON",
+            success: function (json) {
+                if (json.state === 200) {
+                    //将查询到的数据重新设置到控件中
+                    $("#phone").val(json.data.phone);
+                    $("#email").val(json.data.email);
+                    if (json.data.gender === 0) {
+                        let radio = $("#gender-female");
+                        radio.prop("checked", "checked");
+                    } else if (json.data.gender === 1) {
+                        let radio = $("#gender-male");
+                        radio.prop("checked", "checked");
+                    }
+                    // prop:给某个元素添加属性及属性值！
+                } else {
+                    alert("数据不存在!");
+                }
+            },
+            error: function (xhr) {
+                alert("查询用户信息时产生未知的异常！" + xhr.status);
+            }
+        });
+        return false;
+    });
+</script>
+</body>
+</html>

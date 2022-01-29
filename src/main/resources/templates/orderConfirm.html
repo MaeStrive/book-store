@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+
+    <meta charset="utf-8">
+    <title>确认购物车</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap"
+          rel="stylesheet">
+
+
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="assets/css/jquery-ui.css">
+
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="assets/dist/metismenu/metisMenu.min.css">
+
+    <link rel="stylesheet" href="assets/css/animate.css">
+
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="assets/css/order.css">
+    <link rel="stylesheet" href="assets/css/orderConfirm.css">
+    <link rel="stylesheet" href="assets/css/cart.css">
+
+    <link rel="shortcut icon" type="image/png" href="assets/img/favicon.ico">
+
+
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div id="preloader"></div>
+
+<div th:replace="common::commonheader"></div>
+
+<div class="cryptodash-full-wrapper">
+    <div class="crypto-dash-sidenav">
+        <div id="sideNavWrapper" class="active">
+
+            <div th:replace="common::commonleftnav"></div>
+            <div class="container">
+                <div class="col-md-offset-1 col-md-10">
+                    <div class="col-md-4">
+                        <div class="col-md-12 order-bar-active">
+                            1.确认订单信息
+                            <span class="pull-right"><span class="fa fa-chevron-right"></span></span>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="col-md-12 order-bar-undo">
+                            2.在线支付
+                            <span class="pull-right"><span class="fa fa-chevron-right"></span></span>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="col-md-12 order-bar-undo">
+                            3.付款成功
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <form id="form-create-order" role="form" method="get" action="/payment">
+                            <div class="form-group">
+                                <label for="address-list">
+                                    <p>选择收货地址：</p>
+                                </label>
+                                <select name="aid" id="address-list" class="form-control">
+                                </select>
+                            </div>
+                            <div class="panel panel-primary">
+                                <div class="panel-heading">
+                                    <p class="panel-title">订单商品信息：</p>
+                                </div>
+                                <div class="panel-body">
+                                    <table class="cart-table" width="100%">
+                                        <thead>
+                                        <tr>
+                                            <th width="15%"></th>
+                                            <th width="35%">商品</th>
+                                            <th width="15%">单价</th>
+                                            <th width="15%">数量</th>
+                                            <th width="20%">金额</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody id="cart-list" class="cart-body">
+                                        </tbody>
+                                    </table>
+                                    <div class="total-bar">
+                                        &nbsp;
+                                        <span class="pull-right">已选商品
+										<span id="all-count">1</span>件 总价¥
+										<span id="all-price">5298</span>元
+									</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pay-bar">
+                                <a href="/cart">返回购物车</a>
+                                <span class="pull-right"><input id="btn-create-order" type="button" value="在线支付"
+                                                                class="btn btn-primary btn-lg link-pay"/></span>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div th:replace="common::commonscipt"></div>
+<script type="text/javascript">
+    $(function () {
+        showCartList();
+        showAddressList();
+        $("#btn-create-order").click(function () {
+            let addressId = $("#address-list").val();
+            let cartIds = location.search.substr(1);
+            $.ajax({
+                url: "/orders/create",
+                type: "GET",
+                data: "addressId=" + addressId + "&" + cartIds,
+                dataType: "JSON",
+                success: function (json) {
+                    if (json.state === 200) {
+                        alert("订单创建成功!");
+                        location.href = "/payment";
+                    }
+                },
+                error: function (xhr) {
+                    alert("订单加载产生未知异常" + xhr.message);
+                }
+            });
+        });
+    });
+
+    function showCartList() {
+        /** 清空*/
+        $("#cart-list").empty();
+        $.ajax({
+            url: "/carts/list",
+            type: "GET",
+            data: location.search.substr(1),
+            dataType: "JSON",
+            success: function (json) {
+                if (json.state === 200) {
+                    let list = json.data;
+                    let allCount = 0;
+                    let allPrice = 0;
+                    for (let i = 0; i < list.length; i++) {
+                        let tr =
+                            '<tr>' +
+                            '<td><img src="assets/#{image}collect.png" class="img-responsive"/></td>\n' +
+                            '<td>#{title}</td>\n' +
+                            '<td>¥<span>#{price}</span></td>\n' +
+                            '<td>#{num}</td>\n' +
+                            '<td><span>#{totalPrice}</span></td>' +
+                            '</tr>';
+                        tr = tr.replace(/#{image}/g, list[i].image);
+                        tr = tr.replace(/#{title}/g, list[i].title);
+                        tr = tr.replace(/#{price}/g, list[i].price);
+                        tr = tr.replace(/#{num}/g, list[i].num);
+                        tr = tr.replace(/#{totalPrice}/g, list[i].price * list[i].num);
+                        $("#cart-list").append(tr);
+                        allCount += list[i].num;
+                        allPrice += list[i].price * list[i].num;
+                    }
+                    /** 更新总数*/
+                    $("#all-count").html(allCount);
+                    $("#all-price").html(allPrice);
+                } else {
+                    alert("购物车数据加载错误");
+                    location.href = "/cart";
+                }
+            },
+            error: function (xhr) {
+                alert("购物车订单加载异常" + xhr.message);
+            }
+        });
+    }
+
+    function showAddressList() {
+        $("#address-list").empty();
+        $.ajax({
+            url: "/address/addressList",
+            type: "POST",
+            dataType: "JSON",
+            success: function (json) {
+                if (json.state === 200) {
+                    let list = json.data;
+                    for (let i = 0; i < list.length; i++) {
+                        let opt = "<option value='#{aid}'>#{name} &nbsp;&nbsp;&nbsp;#{tag}&nbsp;&nbsp;&nbsp;" +
+                            "#{provinceName}#{cityName}#{address}&nbsp;&nbsp;&nbsp;" +
+                            "#{phone}</option>";
+                        opt = opt.replace(/#{aid}/g, list[i].addressId);
+                        opt = opt.replace(/#{name}/g, list[i].name);
+                        opt = opt.replace(/#{tag}/g, list[i].tag);
+                        opt = opt.replace(/#{provinceName}/g, list[i].provinceName);
+                        opt = opt.replace(/#{cityName}/g, list[i].cityName);
+                        opt = opt.replace(/#{address}/g, list[i].address);
+                        opt = opt.replace(/#{phone}/g, list[i].phone);
+                        $("#address-list").append(opt);
+                    }
+                } else {
+                    alert("购物车地址加载异常");
+                }
+            },
+            error: function (xhr) {
+                alert("地址加载产生未知异常" + xhr.message);
+            }
+        });
+    }
+</script>
+</body>
+</html>

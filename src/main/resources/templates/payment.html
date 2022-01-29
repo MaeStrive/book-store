@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+
+    <meta charset="utf-8">
+    <title>正在支付</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap"
+          rel="stylesheet">
+
+
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="assets/css/jquery-ui.css">
+
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="assets/dist/metismenu/metisMenu.min.css">
+
+    <link rel="stylesheet" href="assets/css/animate.css">
+
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="assets/css/order.css">
+    <link rel="stylesheet" href="assets/css/orderConfirm.css">
+    <link rel="stylesheet" href="assets/css/cart.css">
+
+    <link rel="shortcut icon" type="image/png" href="assets/img/favicon.ico">
+
+
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div id="preloader"></div>
+
+<div th:replace="common::commonheader"></div>
+
+<div class="cryptodash-full-wrapper">
+    <div class="crypto-dash-sidenav">
+        <div id="sideNavWrapper" class="active">
+
+            <div th:replace="common::commonleftnav"></div>
+            <div class="container">
+                <div class="col-md-offset-1 col-md-10">
+                    <div class="col-md-4">
+                        <div class="col-md-12 order-bar-undo">
+                            1.确认订单信息
+                            <span class="pull-right"><span class="fa fa-chevron-right"></span></span>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="col-md-12 order-bar-active">
+                            2.在线支付
+                            <span class="pull-right"><span class="fa fa-chevron-right"></span></span>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="col-md-12 order-bar-undo">
+                            3.付款成功
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <form role="form">
+                            <div class="form-group">
+                                <label for="optionsRadios1">
+                                    <p>选择支付方式：</p>
+                                </label>
+                                <div class="text-center">
+                                    <label class="radio-inline">
+                                        <input type="radio" name="optionsRadios" id="optionsRadios1" checked="checked">
+                                        支付宝
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="optionsRadios" id="optionsRadios2"> 微信
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="optionsRadios" id="optionsRadios3"> 网银
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="optionsRadios" id="optionsRadios4"> 货到付款
+                                    </label>
+                                </div>
+                            </div>
+                            <div>订单号：<span id="pay-id"></span>，支付金额￥<span id="pay-price"></span>，收款方:书城</div>
+                            <div class="pay-bar">
+                                <a href="/cart">返回购物车</a>
+                                <span class="pull-right">¥<span id="pay-price1"></span> <input type="button"
+                                                                                               value="确认付款"
+                                                                                               class="btn btn-primary btn-lg link-success"/></span>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div th:replace="common::commonscipt"></div>
+<script type="text/javascript">
+    $(function () {
+        $.ajax({
+            url: "/orders/order",
+            type: "POST",
+            dataType: "JSON",
+            success: function (json) {
+                if (json.state === 200) {
+                    $("#pay-id").html(json.data.orderId);
+                    $("#pay-price").html(json.data.totalPrice);
+                    $("#pay-price1").html(json.data.totalPrice);
+                } else {
+                    alert("支付加载失败");
+                    location.href = "/cart";
+                }
+            },
+            error: function (xhr) {
+                alert("支付时产生未知的异常" + xhr.message);
+            }
+        });
+    });
+
+</script>
+
+</body>
+</html>

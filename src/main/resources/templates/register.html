@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+
+    <meta charset="utf-8">
+    <title>用户注册</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap"
+          rel="stylesheet">
+
+
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="assets/css/jquery-ui.css">
+
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="assets/dist/metismenu/metisMenu.min.css">
+
+    <link rel="stylesheet" href="assets/css/animate.css">
+
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <link rel="stylesheet" href="assets/css/responsive.css">
+
+    <link rel="shortcut icon" type="image/png" href="assets/img/favicon.ico">
+
+
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div id="preloader"></div>
+<div class="login-register-wrapper">
+    <div class="container">
+        <div class="lr-box">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="lr-img">
+                        <img src="assets/img/bg/book1.png" alt="">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <form id="form-reg" method="post" action="">
+                        <div class="lr-form">
+                            <h3>书城用户注册</h3>
+                            <p>用户注册</p>
+                            <div class="crypto-form">
+                                <div class="cfi">
+                                    <input type="text" name="username" id="username" placeholder="请输入用户名">
+                                </div>
+                                <div class="cfi">
+                                    <input type="password" name="password" id="password" placeholder="请输入密码">
+                                </div>
+                                <div class="needac-forgetpass">
+                                    <a class="needacc" href="/login">返回登录</a>
+                                </div>
+                                <button type="submit" id="btn-reg" name="signup" class="cfi-button">注册</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div th:replace="common::commonscipt"></div>
+
+<script type="text/javascript">
+    $(function () {
+        $("#btn-reg").click(function () {
+            $.ajax({
+                url: "/users/register",
+                data: $("#form-reg").serialize(),
+                type: "POST",
+                dataType: "JSON",
+                success: function (json) {
+                    if (json.state === 200) {
+                        alert("注册成功!");
+                        location.href = "/login";
+                    } else {
+                        alert("用户名已经被占用!");
+                        location.href = "/register";
+                    }
+                },
+                error: function (xhr) {
+                    alert("注册时产生了未知的异常！" + xhr.status);
+                }
+            });
+            return false;
+        });
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+
+    <meta charset="utf-8">
+    <title>商品展示</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap"
+          rel="stylesheet">
+
+
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="assets/css/jquery-ui.css">
+
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="assets/dist/metismenu/metisMenu.min.css">
+
+    <link rel="stylesheet" href="assets/css/animate.css">
+
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <link rel="stylesheet" href="assets/css/responsive.css">
+
+    <link rel="shortcut icon" type="image/png" href="assets/img/favicon.ico">
+
+
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div id="preloader"></div>
+
+<div th:replace="common::commonheader"></div>
+
+<div class="cryptodash-full-wrapper">
+    <div class="crypto-dash-sidenav">
+        <div id="sideNavWrapper" class="active">
+
+            <div th:replace="common::commonleftnav"></div>
+            <div class="container">
+                <div class="col-md-offset-1 col-md-10">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <p class="panel-title"><span class="fa fa-shopping-cart"></span> 购物车</p>
+                        </div>
+                        <div class="panel-body">
+                            <form action="orderConfirm.html" role="form">
+                                <!--购物车表格开始-->
+                                <table class="cart-table" width="100%">
+                                    <thead>
+                                    <tr>
+                                        <th width="8%">
+                                            <input type="checkbox" class="ckall" onclick="checkall(this)"/>全选
+                                        </th>
+                                        <th width="110"></th>
+                                        <th width="29%">商品</th>
+                                        <th width="11%">单价</th>
+                                        <th width="15%">数量</th>
+                                        <th width="11%">金额</th>
+                                        <th>操作</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody id="cart-list" class="cart-body">
+                                    <tr>
+                                        <td>
+                                            <input type="checkbox" class="ckitem"/>
+                                        </td>
+                                        <td><img src="assets/img/portal/12DELLXPS13-silvery/collect.png"
+                                                 class="img-responsive"/></td>
+                                        <td>联想(Lenovo)小新Air13 Pro 13.3英寸14.8mm超轻薄笔记本电脑</td>
+                                        <td>¥<span id="goodsPrice1">5298</span></td>
+                                        <td>
+                                            <input type="button" value="-" class="num-btn" onclick="reduceNum(1)"/>
+                                            <input id="goodsCount1" type="text" size="2" readonly="readonly"
+                                                   class="num-text" value="1">
+                                            <input class="num-btn" type="button" value="+" onclick="addNum(1)"/>
+                                        </td>
+                                        <td><span id="goodsCast1"></span></td>
+                                        <td>
+                                            <input type="button" onclick="delCartItem(this)"
+                                                   class="cart-del btn btn-default btn-xs" value="删除"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <input type="checkbox" class="ckitem"/>
+                                        </td>
+                                        <td><img src="assets/img/portal/16LenovoYOGA900green/collect.png"
+                                                 class="img-responsive"/></td>
+                                        <td>戴尔(DELL)XPS13-9360-R1609 13.3</td>
+                                        <td>¥<span id="goodsPrice2">4988</span></td>
+                                        <td>
+                                            <input type="button" value="-" class="num-btn" onclick="reduceNum(2)"/>
+                                            <input id="goodsCount2" type="text" size="2" readonly="readonly"
+                                                   class="num-text" value="1">
+                                            <input class="num-btn" type="button" value="+" onclick="addNum(2)"/>
+                                        </td>
+                                        <td><span id="goodsCast2"></span></td>
+                                        <td>
+                                            <input type="button" onclick="delCartItem(this)"
+                                                   class="cart-del btn btn-default btn-xs" value="删除"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <input type="checkbox" class="ckitem"/>
+                                        </td>
+                                        <td><img src="assets/img/portal/13LenovoIdeaPad310_silvery/collect.png"
+                                                 class="img-responsive"/></td>
+                                        <td>戴尔(DELL)魔方15MF Pro-R2505TSS灵越</td>
+                                        <td>¥<span id="goodsPrice3">4699</span></td>
+                                        <td>
+                                            <input type="button" value="-" class="num-btn" onclick="reduceNum(3)"/>
+                                            <input id="goodsCount3" type="text" size="2" readonly="readonly"
+                                                   class="num-text" value="1">
+                                            <input class="num-btn" type="button" value="+" onclick="addNum(3)"/>
+                                        </td>
+                                        <td><span id="goodsCast3"></span></td>
+                                        <td>
+                                            <input type="button" onclick="delCartItem(this)"
+                                                   class="cart-del btn btn-default btn-xs" value="删除"/>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                                <div class="total-bar">
+                                    <a href="javascript:selDelCart()"
+                                       class="cart-del-sel btn btn-default btn-xs">删除所选商品</a>
+                                    <span class="pull-right">已选商品
+								<span id="selectCount">0</span>件 总价¥
+								<span id="selectTotal">0</span>元
+								</span>
+                                </div>
+                                <div>
+								<span class="pull-right">
+								<input type="button" value="  结  算  " class="btn btn-primary btn-lg link-account"/>
+							</span>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div th:replace="common::commonscipt"></div>
+
+<script type="text/javascript">
+    $(function () {
+        showCartList();
+    });
+
+    /** 展示购物车列表数据*/
+    function showCartList() {
+        /** 清空数据*/
+        $("#cart-list").empty();
+        $.ajax({
+            url: "/carts/cart",
+            type: "POST",
+            dataType: "JSON",
+            success: function (json) {
+                let list = json.data;
+                for (let i = 0; i < list.length; i++) {
+                    let tr = '<tr>\n' +
+                        '<td>\n' +
+                        '<input name="cids" value="#{cid}" type="checkbox" class="ckitem"/>\n' +
+                        '</td>\n' +
+                        '<td><img src="assets/#{image}collect.png" class="img-responsive"/></td>\n' +
+                        '<td>#{title}#{msg}</td>\n' +
+                        '<td>¥<span id="goodsPrice#{cid}">#{singlePrice}</span></td>\n' +
+                        '<td>\n' +
+                        '<input id="price-#{cid}" type="button" value="-" class="num-btn" onclick="reduceNum(3)"/>\n' +
+                        '<input id="goodsCount#{cid}" type="text" size="2" readonly="readonly" class="num-text" value="#{num}">\n' +
+                        ' <input id="price+#{cid}" class="num-btn" type="button" value="+" onclick="addNum(3)"/>\n' +
+                        '</td>\n' +
+                        '<td><span id="goodsCast#{cid}">#{totalPrice}</span></td>\n' +
+                        '<td>\n' +
+                        '<input type="button" onclick="delCartItem(this)" class="cart-del btn btn-default btn-xs" value="删除"/>\n' +
+                        '</td>\n' +
+                        '</tr>'
+                }
+                tr = tr.replace(/#{cid}/g, list[i].cartId);
+                tr = tr.replace(/#{image}/g, list[i].image);
+                tr = tr.replace(/#{title}/g, list[i].title);
+                tr = tr.replace(/#{msg}/g, list[i].realPrice);
+                tr = tr.replace(/#{num}/g, list[i].num);
+                tr = tr.replace(/#{singlePrice}/g, list[i].price);
+                tr = tr.replace(/#{totalPrice}/g, list[i].price * list[i].num);
+                $("#cart-list").append(tr);
+            },
+            error: function (xhr) {
+                alert("数据加载异常" + xhr.message);
+            }
+        });
+    }
+</script>
+</body>
+</html>

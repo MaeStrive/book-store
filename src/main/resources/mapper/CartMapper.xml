@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.atmae.store.mapper.CartMapper">
+    <resultMap id="CartEntityMap" type="com.atmae.store.entity.Cart">
+        <id column="cid" property="cartId"/>
+        <result column="uid" property="userId"/>
+        <result column="pid" property="productId"/>
+        <result column="created_user" property="createdUser"/>
+        <result column="created_time" property="createdTime"/>
+        <result column="modified_user" property="modifiedUser"/>
+        <result column="modified_time" property="modifiedTime"/>
+    </resultMap>
+
+    <!-- 插入购物车数据：Integer insert(Cart cart) -->
+    <insert id="insert" useGeneratedKeys="true" keyProperty="cartId">
+        INSERT INTO t_cart (uid, pid, price, num, created_user, created_time, modified_user, modified_time)
+        VALUES (#{userId}, #{productId}, #{price}, #{num}, #{createdUser}, #{createdTime}, #{modifiedUser},
+                #{modifiedTime})
+    </insert>
+
+
+    <update id="updateNumByCid">
+        UPDATE
+            t_cart
+        SET num=#{num},
+            modified_user=#{modifiedUser},
+            modified_time=#{modifiedTime}
+        WHERE cid = #{cartId}
+    </update>
+
+
+    <select id="findByUidAndPid" resultMap="CartEntityMap">
+        SELECT *
+        FROM t_cart
+        WHERE uid = #{userId}
+          AND pid = #{productId}
+    </select>
+
+    <select id="findInfoByUserId" resultType="com.atmae.store.vo.CartVO">
+        select cid          as cartId,
+               uid          as userId,
+               pid          as productId,
+               t_cart.price,
+               t_cart.num,
+               t_book.title,
+               t_book.image,
+               t_book.price as realPrice
+        from t_cart
+                 left join t_book on t_cart.pid = t_book.id
+        where uid = #{uid}
+        order by t_cart.created_time desc
+    </select>
+
+    <select id="findCartByCartId" resultMap="CartEntityMap">
+        select *
+        from t_cart
+        where cid = #{cartId}
+    </select>
+
+
+    <select id="findInfoByCartId" resultType="com.atmae.store.vo.CartVO">
+        select cid as cartId,
+        uid as userId,
+        pid as productId,
+        t_cart.price,
+        t_cart.num,
+        t_book.title,
+        t_book.image,
+        t_book.price as realPrice
+        from t_cart
+        left join t_book on t_cart.pid = t_book.id
+        where cid in (
+        <foreach collection="array" item="cartId" separator=",">
+            #{cartId}
+        </foreach>
+        )
+        order by t_cart.created_time desc
+    </select>
+
+    <delete id="delCartByCartId">
+        delete
+        from t_cart
+        where cid = #{cartId}
+    </delete>
+
+    <delete id="delAllCartsByCartIds">
+        delete
+        from t_cart
+        where cid in (
+        <foreach collection="array" item="cartId" separator=",">
+            #{cartId}
+        </foreach>
+        )
+    </delete>
+</mapper>

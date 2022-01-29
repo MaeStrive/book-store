@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.atmae.store.mapper.OrderMapper">
+    <resultMap id="OrderEntityMap" type="com.atmae.store.entity.Order">
+        <id column="oid" property="orderId"></id>
+        <result column="uid" property="userId"></result>
+        <result column="recv_name" property="recvName"></result>
+        <result column="recv_phone" property="recvPhone"></result>
+        <result column="recv_province" property="recvProvince"></result>
+        <result column="recv_city" property="recvCity"></result>
+        <result column="recv_area" property="recvArea"></result>
+        <result column="recv_address" property="recvAddress"></result>
+        <result column="total_price" property="totalPrice"></result>
+        <result column="order_time" property="orderTime"></result>
+        <result column="pay_time" property="payTime"></result>
+        <result column="created_user" property="createdUser"></result>
+        <result column="created_time" property="createdTime"></result>
+        <result column="modified_user" property="modifiedUser"></result>
+        <result column="modified_time" property="modifiedTime"></result>
+    </resultMap>
+
+    <insert id="insertOrder" useGeneratedKeys="true" keyProperty="orderId">
+        insert into t_order(uid, recv_name, recv_phone, recv_province, recv_city,
+                            recv_area, recv_address, total_price, status, order_time,
+                            pay_time, created_user, created_time, modified_user,
+                            modified_time)
+        values (#{userId}, #{recvName}, #{recvPhone}, #{recvProvince}, #{recvCity},
+                #{recvArea}, #{recvAddress}, #{totalPrice}, #{status}, #{orderTime},
+                #{payTime}, #{createdUser}, #{createdTime}, #{modifiedUser}, #{modifiedTime})
+    </insert>
+
+    <insert id="insertOrderItem" useGeneratedKeys="true" keyProperty="id">
+        insert into t_order_item(oid, pid, title, image, price, num, created_user,
+                                 created_time, modified_user, modified_time)
+        values (#{orderId}, #{productId}, #{title}, #{image}, #{price}, #{num}, #{createdUser},
+                #{createdTime}, #{modifiedUser}, #{modifiedTime})
+    </insert>
+
+    <select id="findOrderByUserId" resultMap="OrderEntityMap">
+        select *
+        from t_order
+        where uid = #{userId}
+        order by created_time desc limit 0,1
+    </select>
+</mapper>

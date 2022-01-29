@@ -1,0 +1,908 @@
+/* Medium Layout: 1367px. */
+
+@media only screen and (min-width: 1200px) and (max-width: 1367px) {
+    .sidebar-nav .metismenu a {
+        font-size: 14px;
+    }
+    
+    .sidebar-nav .metismenu a i {
+        font-size: 16px;
+    }
+    form.cryptoH-search input.form-control {
+        margin-left: 30px;
+    }
+
+    h2.crypto-stitle {
+        font-size: 20px;
+    }
+    
+    .crypto-current-balance h3.ccb {
+        font-size: 36px;
+        line-height: 44px;
+    }
+    
+    .crypto-single-wallet h3 {
+        font-size: 36px;
+        line-height: 44px;
+    }
+    
+    .crypto-single-wallet h5 {
+        font-size: 16px;
+    }
+    
+    .crypto-single-wallet ul.market-info li h4 {
+        font-size: 18px;
+        line-height: 24px;
+    }
+    
+    .crypto-single-wallet ul.market-info li span {
+        font-size: 13px;
+    }
+    
+    .crypto-wallet-tab nav.cw-nav .nav-tabs a {
+        font-size: 14px;
+    }
+
+    table.cryptodash-tableA thead tr th, table.cryptodash-tableA tbody tr td {
+        font-size: 14px;
+    }
+    
+    .token-calculator h4 {
+        font-size: 14px;
+    }
+    
+    .tc-input input {
+        font-size: 14px;
+    }
+    
+    .tc-input select {
+        font-size: 14px;
+    }
+    
+    .token-calculator h3 {
+        font-size: 18px;
+    }
+    .crypto-current-balance p {
+        margin: 20px auto;
+        font-size: 20px;
+    }
+    
+    .crypto-current-balance span {
+        font-size: 14px;
+    }
+    
+    
+    
+    .tc2 p {
+        text-align: center;
+    }
+
+    .crypto-pricing-a .cp-head h5 {
+        font-size: 14px;
+        line-height: 20px;
+    }
+    
+    .crypto-pricing-a .cp-price h4 {
+        font-size: 20px;
+    }
+    
+    .crypto-pricing-a .cp-price p {
+        font-size: 16px;
+    }
+    
+    .addNewCoin-box h4 {
+        font-size: 20px;
+    }
+    
+    .addNewCoin-box label {
+        font-size: 16px;
+    }
+    
+    .addNewCoin-box select {
+        font-size: 16px;
+    }
+    
+    .single-configuration-block h4 {
+        font-size: 18px;
+    }
+    h2.wd-page-title {
+        font-size: 24px;
+    }
+    
+    .usdt-other h4 {
+        font-size: 18px;
+    }
+    
+    
+    
+    .usdt-other p {
+        font-size: 14px;
+    }
+    
+    .wallet-analytics-chart select {
+        font-size: 18px;
+    }
+    
+    .wallet-analytics-chart h4 {
+        font-size: 20px;
+    }
+    
+    .added-value-box p {
+        font-size: 16px;
+    }
+    
+    .ico-distribution-box .idb-head h4 {
+        font-size: 20px;
+        line-height: 28px;
+    }
+    
+    table.idbt tr td h4 {
+        font-size: 18px;
+        line-height: 24px;
+    }
+    
+    .ico-distribution-box table.idbt tr td p {
+        font-size: 13px;
+        line-height: 20px;
+    }
+    
+    .icibox-right p {
+        font-size: 13px;
+        line-height: 18px;
+    }
+    
+    .ico-ibox .icibox-left h5 {
+        font-size: 15px;
+        line-height: 20px;
+    }
+    
+    .ico-ibox .icibox-button a {
+        position: relative;
+        top: -9px;
+    }
+    .cd-section-text p {
+        font-size: 13px;
+        line-height: 20px;
+    }
+    .received_withd_msg p,.sent_msg p {
+        font-size: 12px;
+        line-height: 18px;
+    }
+    
+    .chat_ib p {
+        font-size: 12px;
+        line-height: 18px;
+        margin: 2px auto;
+    }
+    
+    .chat_ib h5 {
+        font-size: 13px;
+        line-height: 18px;
+        margin-bottom: 5px;
+    }
+    .cc-wrapper h3 {
+        font-size: 18px;
+        line-height: 26px;
+    }
+    
+    .cfs select {
+        font-size: 18px;
+    }
+    
+    .i-custom-file-upload span.h4 {
+        font-size: 16px;
+        margin-bottom: 0px;
+        line-height: 24px;
+    }
+    
+    .i-custom-file-upload span {
+        font-size: 12px;
+        line-height: 20px;
+    }
+    .crypto-form-wrapper h3 {
+        font-size: 18px;
+        line-height: 26px;
+        margin-bottom: 20px;
+    }
+    
+    .cfi label {
+        font-size: 13px;
+        margin-bottom: 10px;
+    }
+    
+    .cfi input {
+        font-size: 13px;
+        height: 40px;
+    }
+    
+    .cfi {
+        margin-bottom: 12px;
+    }
+    
+    .cfi-button {
+        font-size: 13px;
+        padding: 5px 15px;
+        height: 40px;
+        margin-top: 10px;
+    }
+    
+}
+
+@media only screen and (min-width: 1200px) {
+    form.cryptoH-search input.form-control {
+        margin-left: 20px;
+    }
+}
+@media only screen and (min-width: 1200px) and (max-width: 1320px) {
+    .crypto-single-wallet ul.market-info li h4 {
+        font-size: 18px;
+    }
+    
+    .crypto-single-wallet ul.market-info li span {
+        font-size: 12px;
+    }
+}
+
+/* Medium Layout: 1280px. */
+
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+    
+}
+
+
+
+@media only screen and (max-width: 1200px) { 
+    form.tc-form {
+        text-align: center;
+    }
+    .tcw2 p.crypto-subtitle,
+    .tc2 p {
+        text-align: center;
+    }
+    .crypto-overview {
+        text-align: center;
+    }
+    canvas {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .hashpb-chart .pie-2middle {
+        display: none;
+    }
+    .crypto-pricing-a {
+        max-width: 240px;
+        margin: 25px auto;
+    }
+    .single-configuration-block,
+    .crypto-form-wrapper,
+    .addNewCoin-box,
+    .rt-received-send-wrapper,
+    .crypto-overview-wrapper,
+    .token-calculator,
+    .ico-distribution-box,
+    .ico-statistics-chart,
+    .ico-important-box {
+        max-width: 540px;
+        margin: 15px auto;
+    }
+    .buy-token-wrapper p.crypto-subtitle,
+    .wallet-details-content-wrapper h2.wd-page-title,
+    h2.crypto-stitle {
+        text-align: center;
+    }
+    .ico-destribution-token {
+        margin: 15px auto;
+    }
+    .cc-wrapper {
+        margin: 15px auto;
+        max-width: 540px;
+    }
+
+    .hashpb-chart,
+    .transaction-status-pie,
+    .ico-distribution-bounceRate-box {
+        max-width: 540px;
+        margin: 25px auto;
+    }
+}
+
+
+
+
+@media only screen and (max-width: 991px) {
+
+
+    .crypto-single-wallet ul.market-info li h4 {
+        font-size: 16px;
+        line-height: 24px;
+    }
+    
+    .crypto-single-wallet ul.market-info li span {
+        font-size: 12px;
+        line-height: 18px;
+    }
+
+
+    
+    .right-nav {
+        all: unset !important;
+        position: relative;
+        width: 85% !important;
+        display: inline-block !important;
+        text-align: right !important;
+    }
+    a#sideNav-toggle {
+        display: none;
+    }
+    form.cryptoH-search {
+        display: inline-block;
+    }
+    
+    .crypto-user-btn {
+        display: inline-block;
+    }
+    
+    .crypto-user-btn li {
+        display: inline-block;
+    }
+    
+    .crypto-user-btn li a.dropdown-toggle span.label {
+        top: 4px;
+    }
+
+
+
+    .transaction-details-table {
+        overflow-x: auto;
+    }
+
+    table.tdt {
+        width: 992px !important;
+    }
+
+
+    
+}
+
+/* Tablet Layout: 768px. */
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+    
+}
+
+
+/* Mobile Layout: 320px. */
+
+@media only screen and (max-width: 767px) {
+    .lr-form {
+        margin: 0 auto;
+    }
+    
+    .lr-img {
+        display: none;
+    }
+    .crypto-single-wallet ul.market-info li {
+        display: inline-block;
+        width: 48%;
+    }
+    table.cryptodash-tableA {
+        min-width: 620px;
+    }
+    .rth-table {
+        overflow-x: auto;
+    }
+    .right-nav {
+        width: 420px !important;
+    }
+    form.cryptoH-search {}
+
+    form.cryptoH-search input.form-control {
+        width: 150px;
+        font-size: 12px;
+    }
+    a.btn-style-a-small {
+        font-size: 10px;
+        padding: 2px 12px;
+        line-height: 17px;
+    }
+    
+    .inbox_people {
+        width: 100%;
+        order: 1;
+        float: unset;
+    }
+    
+    .mesgs {
+        width: 100%;
+        order: 2;
+        float: unset;
+    }
+    
+    .inbox_msg {
+         /* Safari */
+         display: -ms-flexbox;
+         display: flex;
+         -ms-flex-wrap: wrap;
+         flex-wrap: wrap;
+    }
+    .hhv iframe {
+        height: 350px;
+    }
+
+    .buy-token-table-box {
+        overflow-x: auto;
+    }
+    
+    table.buytcn {
+        min-width: 600px;
+    }
+    
+}
+
+
+
+@media only screen and (max-width: 600px) {
+    .right-nav {
+        width: 350px !important;
+    }
+    form.cryptoH-search input.form-control {
+        width: 120px;
+        font-size: 10px;
+        display: inline-block;
+    }
+    form.cryptoH-search button {
+        font-size: 14px;
+        padding: 0px 10px;
+    }
+    .crypto-user-btn .dropdown-menu {
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 575px) {
+    table.tdt th, 
+    table.tdt td {
+        font-size: 12px;
+    }
+    form.cryptoH-search input.form-control {
+        width: 100px;
+        font-size: 10px;
+    }
+    .right-nav {
+        width: 318px !important;
+    }
+}
+/* Wide Mobile Layout: 480px. */
+
+@media only screen and (min-width: 481px) and (max-width: 767px) {
+    
+}
+
+
+/* Wide Mobile Layout: 480px. */
+
+@media only screen and (min-width: 240px) and (max-width: 480px) {
+    .right-nav {
+        width: 260px !important;
+    }
+    form.cryptoH-search input.form-control {
+        height: 30px;
+        width: 125px;
+        position: relative;
+        top: -2px;
+    }
+    
+    form.cryptoH-search button {
+        height: 30px;
+    }
+    .crypto-single-wallet ul.market-info li {
+        width: 100%;
+    }
+    .crypto-single-wallet h3 {
+        font-size: 30px;
+    }
+    .crypto-current-balance h3.ccb {
+        font-size: 36px;
+    }
+    .tc2 .tc-input input {
+        max-width: 145px;
+    }
+
+
+    .single-configuration-block h4 {
+        font-size: 14px;
+        line-height: 22px;
+    }
+    
+    .single-configuration-block a {
+        font-size: 10px;
+        padding: 2px 15px;
+        display: block;
+    }
+    
+    .single-configuration-block {
+        padding-top: 10px;
+        min-height: 80px;
+    }
+    
+    .added-value-box {
+        position: relative;
+        width: 100%;
+        text-align: center;
+        top: 0;
+        left: 0;
+    }
+    
+    .wallet-analytics-chart {
+        text-align: center;
+    }
+    
+    .wallet-analytics-chart ul.nav {}
+    .sent_msg {
+        width: 100%;
+    }
+    
+    .received_withd_msg {
+        width: 100%;
+    }
+
+    .crypto-user-btn li a.profile-pic img {
+        width: 30px;
+        height: 30px;
+    }
+    
+    .crypto-current-balance span {
+        font-size: 12px;
+    }
+    
+    
+    .crypto-current-balance h3.ccb {
+        font-size: 20px;
+        line-height: 28px;
+        margin: 5px auto;
+    }
+    
+    .crypto-current-balance p {
+        font-size: 16px;
+    }
+    
+    .crypto-current-balance a.btn-style-a {
+        margin-top: 10px;
+    }
+    
+    a.btn-style-a {
+        font-size: 14px;
+        padding: 5px 25px;
+    }
+    
+    
+    h2.crypto-stitle {
+        font-size: 20px;
+    }
+    
+    
+    .crypto-wallet-tab nav.cw-nav .nav-tabs a {
+        font-size: 12px;
+    }
+    
+    .crypto-single-wallet h3 {
+        font-size: 20px;
+        line-height: 30px;
+    }
+    
+    .crypto-single-wallet h5 {
+        font-size: 14px;
+    }
+    
+    .crypto-single-wallet ul.market-info li {
+        margin: 5px auto;
+        text-align: center;
+    }
+    
+    .crypto-single-wallet {
+        text-align: center;
+    }
+    
+
+    .transaction-status-pie {
+        width: 385px;
+    }
+    
+    .transaction-status {
+        overflow-x: scroll;
+    }
+    a.btn-style-b {
+        font-size: 12px;
+    }
+    table.cryptodash-tableA thead tr th, table.cryptodash-tableA tbody tr td {
+        font-size: 14px;
+    }
+    .hashpower-balance-wrapper {
+        overflow: scroll;
+    }
+    
+    .hashpb-chart {
+        width: 385px;
+    }
+    .addNewCoin-box label {
+        font-size: 16px;
+    }
+    
+    .addNewCoin-box select {
+        font-size: 14px;
+        height: 35px;
+        margin-bottom: 0px;
+    }
+    
+    .addNewCoin-box h4 {
+        font-size: 14px;
+        margin: 10px auto;
+    }
+    
+    .single-configuration-block a {
+        margin-left: 60px;
+        float: left;
+        padding: 0px 15px;
+    }
+    
+    h2.wd-page-title {
+        font-size: 24px;
+    }
+    
+    .usdt-other h4 {
+        font-size: 16px;
+    }
+    
+    .usdt-other p {
+        font-size: 10px;
+    }
+    
+    
+    table.wbt tr td .wbt-crncy img {
+        height: 25px;
+        width: 25px;
+    }
+    
+    table.wbt tr td .wbt-crncy span {
+        font-size: 12px;
+        margin-left: 5px;
+    }
+    
+    table.wbt tr td {
+        padding-left: 0px;
+    }
+    
+    
+    
+    .wallet-analytics-chart select {
+        font-size: 14px;
+        height: 34px;
+    }
+    
+    
+    
+    .wallet-analytics-chart h4 {
+        font-size: 16px;
+        line-height: 24px;
+        margin-bottom: 5px;
+    }
+    
+    .added-value-box p {
+        font-size: 12px;
+        line-height: 20px;
+    }
+    
+    .wallet-analytics-chart ul.nav li a {
+        font-size: 10px;
+        padding: 3px 15px;
+    }
+    
+    .wallet-analytics-chart ul.nav {
+        text-align: center;
+        position: relative;
+    }
+    .ico-distribution-box .idb-head h4 {
+        font-size: 16px;
+        line-height: 24px;
+    }
+    
+    .ico-distribution-box .idb-head p {
+        font-size: 12px;
+    }
+    
+    .ico-distribution-box .idb-head {
+        padding: 15px;
+    }
+    
+    .ico-distribution-box .idb-table {
+        padding: 20px 0px 14px;
+    }
+    
+    .ico-distribution-box .idb-table p {
+        font-size: 12px;
+        line-height: 18px;
+    }
+    
+    table.idbt tr td h4 {
+        font-size: 14px;
+        line-height: 22px;
+    }
+    
+    .ico-important-box p {
+        font-size: 12px;
+    }
+    
+    .ico-ibox {
+        text-align: center;
+    }
+    
+    .ico-important-box .ico-mi h3 {
+        font-size: 22px;
+    }
+    .cd-section-text p {
+        font-size: 12px;
+        line-height: 20px;
+    }
+    
+    .cd-section-text {
+        padding: 20px;
+    }
+    .chat_ib h5 {
+        font-size: 13px;
+        line-height: 20px;
+        margin-bottom: 0px;
+    }
+    
+    .chat_ib p {
+        font-size: 11px;
+        line-height: 16px;
+    }
+    
+    .received_withd_msg p {
+        font-size: 11px;
+        line-height: 16px;
+    }
+    
+    .sent_msg p {
+        font-size: 11px;
+        line-height: 16px;
+    }
+    
+    .incoming_msg_img {
+        width: 10%;
+    }
+    
+    .time_date {
+        line-height: 15px;
+        font-size: 8px;
+    }
+    
+    .outgoing_msg {
+        margin: 15px auto;
+    }
+    
+    .input_msg_write textarea {
+        font-size: 10px;
+    }
+    
+    .cfi-button {
+        font-size: 12px;
+        height: 40px;
+    }
+    
+    .cfi input {
+        font-size: 12px;
+        height: 40px;
+        line-height: 18px;
+    }
+    
+    .cfi label {
+        font-size: 12px;
+        line-height: 22px;
+        margin-bottom: 5px;
+    }
+    
+    .cfi {
+        margin-bottom: 10px;
+    }
+    
+    .crypto-form-wrapper h3 {
+        font-size: 16px;
+        line-height: 24px;
+        margin-bottom: 20px;
+    }
+    
+    .cc-box {
+        padding: 5px;
+    }
+    
+    .cfs label {
+        font-size: 20px;
+    }
+    
+    .cfs select {
+        padding-left: 40px;
+        font-size: 12px;
+        height: 55px;
+    }
+    
+    .cc-wrapper h3 {
+        font-size: 16px;
+    }
+    
+    .i-custom-file-upload {
+        padding-left: 30px;
+    }
+    
+    .i-custom-file-upload {}
+    
+    .i-custom-file-upload i {
+        font-size: 22px;
+    }
+    
+    .i-custom-file-upload span.h4 {
+        font-size: 15px;
+        margin-bottom: 0px;
+    }
+    
+    .i-custom-file-upload span {
+        font-size: 10px;
+        line-height: 12px;
+    }
+    
+    .i-custom-file-upload span.p {
+        font-size: 10px;
+        line-height: 12px;
+    }
+
+    .chkbox-wrapper ul.list-group.w-50 {
+        width: 100% !important;
+    }
+}
+
+
+@media only screen and (max-width: 374px) {
+    .cryptodash-nav .navbar-brand {
+        padding: 10px;
+        margin-right: 0px;
+    }
+    
+    .right-nav {
+        width: 220px !important;
+    }
+    .tc2 .tc-input input {
+        max-width: 110px;
+    }
+    .rt-received-send h4 {
+        font-size: 12px;
+        font-weight: 400;
+    }
+    
+    table.trs-table th, table.trs-table td {
+        font-size: 9px;
+    }
+    
+    table.trs-table {}
+    
+    .rt-received-send select {
+        font-size: 12px;
+        height: 36px;
+    }
+
+
+
+    .lr-form .cfi-button {
+        padding: 2px 50px;
+    }
+    
+    .needac-forgetpass a {
+        float: unset !important;
+        margin-bottom: 5px;
+        display: block;
+    }
+    
+    .needac-forgetpass a.needacc {
+        margin-bottom: 20px;
+    }
+    
+}

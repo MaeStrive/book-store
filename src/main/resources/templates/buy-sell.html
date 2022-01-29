@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <title>购物</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap"
+          rel="stylesheet">
+
+
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="assets/css/jquery-ui.css">
+
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="assets/dist/metismenu/metisMenu.min.css">
+
+    <link rel="stylesheet" href="assets/css/animate.css">
+
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <link rel="stylesheet" href="assets/css/responsive.css">
+
+    <link rel="shortcut icon" type="image/png" href="assets/img/favicon.ico">
+
+
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div id="preloader"></div>
+
+<div th:replace="common::commonheader"></div>
+
+<div class="cryptodash-full-wrapper">
+    <div class="crypto-dash-sidenav">
+        <div id="sideNavWrapper" class="active">
+            <div id="sidebar-wrapper">
+                <nav class="sidebar-nav">
+                    <ul class="metismenu" id="menu3">
+                        <li>
+                            <a href="/index">
+                                <i class="fa fa-tachometer" aria-hidden="true"></i>
+                                <span class="msm-text">首页</span>
+                            </a>
+                        </li>
+                        <li class="mm-active">
+                            <a href="/buySell">
+                                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                                <span class="msm-text">购物</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/info">
+                                <i class="fa fa-info-circle" aria-hidden="true"></i>
+                                <span class="msm-text">信息</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/signOut">
+                                <i class="fa fa-sign-out" aria-hidden="true"></i>
+                                <span class="msm-text">注销</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div id="page-content-wrapper" class="dashboard-content">
+                <div class="container">
+                    <div id="all-list" class="row">
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div th:replace="common::commonscipt"></div>
+<script type="text/javascript">
+    $(function () {
+        showList();
+    });
+
+    function showList() {
+        $("#all-list").empty();
+        $.ajax({
+            url: "products/list",
+            type: "POST",
+            dataType: "JSON",
+            success: function (json) {
+                if (json.state === 200) {
+                    let list = json.data;
+                    for (let i = 0; i < list.length; i++) {
+                        let html = ' <div class="col-md-4">\n' +
+                            '<a href="/product?id=#{id}">' +
+                            '<img src="assets/#{image}collect.png">\n' +
+                            '<div><span class="alert-dark">#{title}</span></div>\n' +
+                            '<div><span>#{sellPoint}</span>\n' +
+                            '</div>\n' +
+                            '<div><span class="alert-danger">#{price}</span></div>\n' +
+                            '</a>' +
+                            '</div>';
+                        html = html.replace(/#{id}/g, list[i].id)
+                        html = html.replace(/#{sellPoint}/g, list[i].sellPoint);
+                        html = html.replace(/#{title}/g, list[i].title);
+                        html = html.replace(/#{price}/g, list[i].price);
+                        html = html.replace(/#{image}/g, list[i].image);
+
+                        $("#all-list").append(html);
+                    }
+                }
+            },
+            error: function (xhr) {
+                alert("商品加载产生未知异常" + xhr.message);
+            }
+        });
+    }
+</script>
+</body>
+</html>

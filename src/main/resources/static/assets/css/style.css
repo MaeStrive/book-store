@@ -1,0 +1,3141 @@
+/*-----------------------------------------------------------------------------------
+
+    Template Name: Cryptodash 
+    Template URI: 
+    Description: This is html5 template
+    Author: Voidcoders
+    Author URI: 
+    Version: 1.0
+
+-----------------------------------------------------------------------------------*/
+/* ---------- CSS Index ----------
+
+    1. Theme default CSS
+    2. Cryptodash CSS
+        2.1 Header CSS
+        2.2 Side Nav CSS
+        2.3 Crypto Page Content CSS
+            - Crypto Overview CSS
+            - Crypto Wallet CSS
+            - Crypto Transaction History
+            - Crypto Token Calculator CSS 
+            - Crypto Token Distribution CSS
+            - Profile Analytics CSS
+            - Buy Token CSS
+            - Get Estimate Wrapper
+            - Token Buy Analytics CSS
+            - Transaction CSS
+            - Hashpower CSS
+            - Output Chart CSS
+            - Wallet Details CSS
+            - Ico Distribution CSS
+            - Crypto Dash Inbox CSS
+            - Elements CSS
+        2.4 Login Registration Page CSS
+
+
+
+
+
+ ------ CSS Index END ------- */
+
+/*----------------------------------------*/
+/*  1. Theme default CSS
+/*----------------------------------------*/
+
+.clear {
+    clear: both
+}
+
+::-moz-selection {
+    background: #00b0ff;
+    color: #fff;
+    text-shadow: none;
+}
+
+::selection {
+    background: #00b0ff;
+    color: #fff;
+    text-shadow: none;
+}
+
+.no-mar {
+    margin: 0!important;
+}
+
+.no-pad {
+    padding: 0!important;
+}
+
+div#preloader {
+    background: #fff url("../img/loader.gif") no-repeat scroll center center;
+    height: 100%;
+    left: 0;
+    overflow: visible;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    width: 100vw;
+    z-index: 999;
+}
+
+header.navbar-fixed-top {
+    animation-duration: 0.8s;
+    animation-name: fadeInDown;
+    animation-timing-function: ease-in-out;
+    box-shadow: 0 4px 12px -4px rgba(0, 0, 0, 0.75);
+    left: 0;
+    padding-top: 0px;
+    position: fixed !important;
+    right: 0;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+}
+
+.mar-bot-50 {
+    margin-bottom: 50px;
+}
+
+.mar-bot-40 {
+    margin-bottom: 40px;
+}
+
+.mar-bot-35 {
+    margin-bottom: 35px;
+}
+
+.mar-bot-30 {
+    margin-bottom: 30px;
+}
+
+.mar-top-30 {
+    margin-top: 30px;
+}
+
+.mar-top-80 {
+    margin-top: 80px;
+}
+
+.mar-top-80 {
+    margin-top: 80px;
+}
+
+.mar-top-55 {
+    margin-top: 55px;
+}
+
+.mar-top-108 {
+    margin-top: 108px;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+*,
+*:before,
+*:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+*:focus {
+    outline: 0;
+}
+
+html {
+    font-size: 62.5%;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    background: #fff;
+    font-weight: normal;
+    font-size: 15px;
+    letter-spacing: 0px;
+    color: #888;
+    line-height: 30px;
+    -webkit-font-smoothing: antialiased;
+    /* Fix for webkit rendering */
+    -webkit-text-size-adjust: 100%;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+button,
+input,
+textarea,
+select {
+    font-size: 16px;
+    letter-spacing: 0px;
+    height: 50px;
+    color: #707070;
+    border: 1px solid #707070;
+    border-radius: 5px;
+    padding: 0px 12px;
+    font-weight: 500;
+}
+
+
+
+/* 
+Table Of Contents
+=========================
+- Default Typography
+- Custom Typography
+=========================
+*/
+
+
+/* 
+--------------------------
+- Default Typography
+--------------------------
+*/
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    color: #000;
+    letter-spacing: 1.5px;
+}
+
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
+    font-weight: inherit;
+    font-family: 'Poppins', sans-serif;
+}
+
+h1 {
+    font-size: 36px;
+    line-height: 70px;
+    letter-spacing: 1px;
+    margin-bottom: 0px;
+}
+
+h2 {
+    font-size: 22px;
+    line-height: 24px;
+    margin-bottom: 0px;
+}
+
+h3 {
+    font-size: 24px;
+    line-height: 30px;
+    margin-bottom: 0px;
+}
+
+h4 {
+    font-size: 20px;
+    line-height: 27px;
+}
+
+h5 {
+    font-size: 16px;
+    line-height: 24px;
+}
+
+h6 {
+    font-size: 14px;
+    line-height: 24px;
+}
+
+p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+    letter-spacing: 0;
+    line-height: 28px;
+    margin: 0;
+}
+
+p img {
+    margin: 0;
+}
+
+span {
+    font-family: 'Poppins', sans-serif;
+}
+
+
+/* em and strong */
+
+em {
+    font: 15px/30px;
+}
+
+strong,
+b {
+    font: 15px/30px;
+}
+
+small {
+    font-size: 11px;
+    line-height: inherit;
+}
+
+
+/*  blockquotes */
+
+blockquote {
+    border-left: 0 none;
+    font-family: 'Poppins', sans-serif;
+    margin: 10px 0;
+    padding-left: 40px;
+    position: relative;
+}
+
+blockquote::before {
+    color: #4e5665;
+    content: "";
+    font-family: FontAwesome;
+    font-size: 36px;
+    left: 20px;
+    line-height: 0;
+    margin: 0;
+    opacity: 0.5;
+    position: absolute;
+    top: 20px;
+}
+
+blockquote p {
+    font-style: italic;
+    padding: 0;
+    font-size: 18px;
+    line-height: 36px;
+}
+
+blockquote cite {
+    display: block;
+    font-size: 12px;
+    font-style: normal;
+    line-height: 18px;
+}
+
+blockquote cite:before {
+    content: "\2014 \0020";
+}
+
+blockquote cite a,
+blockquote cite a:visited {
+    color: #8B9798;
+    border: none
+}
+
+/* abbreviations */
+
+abbr {
+    color: #444;
+    font-weight: 700;
+    font-variant: small-caps;
+    text-transform: lowercase;
+    letter-spacing: .6px;
+}
+
+abbr:hover {
+    cursor: help;
+}
+
+/* links */
+
+a,
+a:visited {
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-weight: normal;
+    font-size: 12px;
+    color: #111;
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    outline: 0;
+}
+
+a:hover,
+a:active {
+    color: #00b0ff;
+    text-decoration: none;
+    outline: 0;
+}
+
+a:focus {
+    text-decoration: none;
+    outline: 0;
+}
+
+p a,
+p a:visited {
+    line-height: inherit;
+    outline: 0;
+}
+
+a.active-page {
+    color: #e6ae48!important;
+}
+
+
+/* list */
+
+ul,
+ol {
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+ul {
+    margin: 0;
+}
+
+ol {
+    list-style: decimal;
+}
+
+ol,
+ul.square,
+ul.circle,
+ul.disc {
+    margin-left: 0px;
+}
+
+ul.square {
+    list-style: square outside;
+}
+
+ul.circle {
+    list-style: circle outside;
+}
+
+ul.disc {
+    list-style: disc outside;
+}
+
+ul ul,
+ul ol,
+ol ol,
+ol ul {
+    margin: 0;
+}
+
+ul ul li,
+ul ol li,
+ol ol li,
+ol ul li {
+    margin-bottom: 0px;
+}
+
+li {
+    line-height: 18px;
+    margin-bottom: 0px;
+}
+
+ul.large li {}
+
+li p {}
+
+
+/* definition list */
+
+dl {
+    margin: 12px 0;
+}
+
+dt {
+    margin: 0;
+    color: #11ABB0;
+}
+
+dd {
+    margin: 0 0 0 20px;
+}
+
+button {}
+
+
+
+
+
+a.btn-style-b-m {
+    font-size: 14px;
+    letter-spacing: 0px;
+    display: inline-block;
+    color: #01CD8C;
+    border: 1px solid #01CD8C;
+    padding: 5px 25px;
+    border-radius: 5px;
+}
+
+
+
+a.btn-style-c-m {
+    font-size: 14px;
+    letter-spacing: 0px;
+    display: inline-block;
+    color: #1652E8;
+    border: 1px solid #1652E8;
+    padding: 5px 25px;
+    border-radius: 5px;
+}
+a.btn-style-c-m:hover {
+    color: #fff;
+    background-color: #1652E8;
+}
+/* 
+--------------------------
+- Custom Typography
+--------------------------
+*/
+
+
+/* Your Custom Typography. */
+
+
+
+
+
+
+
+/*----------------------------------------*/
+/*  2. Cryptodash CSS
+/*----------------------------------------*/
+
+/* 2.1 Header CSS */
+.cryptodash-header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 99;
+}
+.cdh-light {
+    background-color: #F8FAFF;
+}
+
+
+.crypto-user-btn {
+    position: relative;
+}
+
+.crypto-user-btn li {
+    margin: 0px 5px;
+}
+
+.crypto-user-btn li a.profile-pic {
+    position: relative;
+    margin-left: 10px;
+}
+
+.crypto-user-btn li a.profile-pic img {
+    height: 40px;
+    width: 40px;
+}
+
+.crypto-user-btn li a {
+    font-size: 25px;
+    line-height: 36px;
+    margin: 0px 5px;
+    color: #989BAC;
+}
+
+.crypto-user-btn li a.dropdown-toggle:after {
+    margin-left: 0;
+    margin-right: 0;
+    display: none;
+}
+
+.crypto-user-btn li a.dropdown-toggle {
+    position: relative;
+}
+
+.crypto-user-btn li a.dropdown-toggle span.label {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    font-size: 12px;
+    line-height: 14px;
+    padding: 3px;
+    color: #fff;
+    background-color: #FF2626;
+    display: block;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    text-align: center;
+}
+.cryptodash-nav {}
+
+.cryptodash-nav .navbar-brand {
+    display: block;
+    background-color: #f8faff;
+    margin-left: -10px;
+    margin-top: -5px;
+    padding: 0px;
+    margin-bottom: -5px;
+    padding: 10px 20px;
+}
+
+a#sideNav-toggle {
+    font-size: 40px;
+    color: #989bac;
+    margin-left: 60px;
+    margin-right: 0;
+}
+a#sideNav-toggle:hover {
+    color: #000;
+}
+form.cryptoH-search {
+    position: relative;
+}
+
+form.cryptoH-search input.form-control {
+    height: 44px;
+    font-size: 16px;
+    letter-spacing: 0px;
+    color: #000;
+    border: none;
+    padding: 0px 20px;
+}
+
+form.cryptoH-search button {
+    height: 44px;
+    border: none;
+    background-color: #fff;
+    padding: 0px 15px;
+    cursor: pointer;
+}
+form.cryptoH-search button:focus,
+form.cryptoH-search input.form-control:focus {
+    box-shadow: none;
+    outline: none;
+}
+
+
+
+.admin-user {
+    position: absolute;
+    left: unset;
+    right: 0;
+    min-width: 140px;
+}
+
+.admin-user .user-display-name {
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 0px;
+    font-weight: 400;
+    text-align: center;
+    display: block;
+    border-bottom: 1px solid #000;
+    padding-bottom: 2px;
+}
+
+.admin-user li a {
+    font-size: 16px;
+    letter-spacing: 0px;
+    color: #989bac;
+    margin: 0px;
+    line-height: 26px;
+    display: block;
+    text-align: center;
+}
+
+.admin-user li a:hover {
+    color: #1652e8;
+}
+
+.notification-note {
+    left: unset;
+    right: 0;
+    min-width: 280px;
+    padding: 5px;
+}
+
+.notification-note li {
+    position: relative;
+}
+
+.notification-note li .media {
+    position: relative;
+    margin-bottom: 5px;
+    padding: 12px 0px 15px;
+    border-bottom: 1px solid #989bac;
+}
+
+.notification-note li .media a.profile-pic {
+    margin: 0 auto;
+}
+
+.notification-note h5.media-heading {}
+
+.notification-note h5.media-heading b {
+    font-size: 14px;
+    letter-spacing: 0px;
+    font-weight: 500;
+}
+
+.notification-note h5.media-heading small {
+    font-size: 10px;
+    letter-spacing: 0px;
+}
+
+.notification-note .media-body {
+    font-size: 11px;
+    letter-spacing: 0px;
+    color: #555555;
+    padding-left: 8px;
+}
+
+.notification-note .media-body strong {
+    color: #000;
+}
+
+
+.notification-note .media-body .text-muted {
+    font-size: 11px;
+    letter-spacing: 0px;
+    line-height: 16px;
+    margin: 2px auto;
+}
+
+.notification-note li {}
+
+.notification-note li a.btn-2-all {
+    font-size: 12px;
+    letter-spacing: 0px;
+    display: block;
+    text-align: center;
+}
+
+.message-note {
+    left: unset;
+    right: 0;
+}
+
+.message-note li {
+    min-width: 200px;
+}
+
+.message-note li a {
+    display: block;
+    position: relative;
+    font-size: 12px;
+    letter-spacing: 0px;
+    color: #04073b;
+}
+a.btn-2-all:hover {
+    color: #000;
+}
+/* Header CSS END */
+
+
+/* 2.2 Side Nav CSS */
+#sideNavWrapper {
+    padding-left: 80px;
+    transition: all .4s ease 0s;
+    height: 100%;
+    padding-top: 82px;
+}
+
+/* #sidebar-wrapper {
+    margin-left: -200px;
+    left: 80px;
+    width: 200px;
+    background: #222;
+    position: fixed;
+    height: 100%;
+    z-index: 9;
+    top: 0;
+    padding-top: 82px;
+    transition: all .4s ease 0s;
+    overflow-y: scroll;
+} */
+#sidebar-wrapper {
+    margin-left: -200px;
+    left: 80px;
+    width: 200px;
+    background: #222;
+    position: absolute;
+    height: 100%;
+    z-index: 9;
+    top: 0;
+    padding-top: 82px;
+    transition: all .4s ease 0s;
+}
+/* width */
+#sidebar-wrapper::-webkit-scrollbar {
+    width: 2px;
+}
+  
+/* Track */
+#sidebar-wrapper::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+   
+/* Handle */
+#sidebar-wrapper::-webkit-scrollbar-thumb {
+    background: #888; 
+}
+  
+/* Handle on hover */
+#sidebar-wrapper::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+
+
+
+#page-content-wrapper {
+    padding-left: 0;
+    margin-left: 0;
+    width: 100%;
+    height: auto;
+}
+#sideNavWrapper.active {
+    padding-left: 200px;
+}
+#sideNavWrapper.active #sidebar-wrapper {
+    left: 200px;
+}
+
+#page-content-wrapper {
+  width: 100%;
+}
+
+
+
+
+
+
+@media (max-width:767px) {
+    #sideNavWrapper {
+    padding-left: 70px;
+    transition: all .4s ease 0s;
+}
+#sidebar-wrapper {
+    left: 70px;
+}
+#sideNavWrapper.active {
+    padding-left: 200px;
+}
+#sideNavWrapper.active #sidebar-wrapper {
+    left: 200px;
+    width: 200px;
+    transition: all .4s ease 0s;
+}
+}
+
+
+
+/* Metismenu CSS */
+.sidebar-nav {
+    background: #212529;
+}
+.sidebar-nav ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    background: #343a40;
+}
+#sideNavWrapper.active .metismenu {
+    transition: .5s ease;
+    background: #F8FAFF;
+}
+.sidebar-nav .metismenu {
+    background: #04084A;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    transition: .5s ease;
+    height: 100%;
+}
+
+.sidebar-nav .metismenu li + li {
+  margin-top: 5px;
+}
+
+.sidebar-nav .metismenu li:first-child {
+    margin-top: 0;
+}
+.sidebar-nav .metismenu li:last-child {
+  margin-bottom: 5px;
+}
+
+
+.sidebar-nav .metismenu > li {
+    /*-webkit-box-flex: 1;
+    -ms-flex: 1 1 0%;
+    flex: 1 1 0%;*/
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    position: relative;
+}
+.sidebar-nav .metismenu a {
+    position: relative;
+    display: block;
+    padding: 13px 15px;
+    color: #adb5bd;
+    outline-width: 0;
+    transition: all .3s ease-out;
+    font-size: 16px;
+    line-height: 22px;
+    letter-spacing: 0px;
+}
+.sidebar-nav .metismenu a i {
+    margin-right: 5px;
+    font-size: 20px;
+    line-height: 26px;
+}
+.sidebar-nav .metismenu ul a {
+    padding: 10px 15px 10px 30px;
+}
+
+.sidebar-nav .metismenu ul ul a {
+    padding: 10px 15px 10px 45px;
+}
+
+.sidebar-nav .metismenu a:hover, 
+.sidebar-nav .metismenu a:focus, 
+.sidebar-nav .metismenu a:active, 
+.sidebar-nav .metismenu .mm-active > a {
+    color: #f8f9fa;
+    text-decoration: none;
+    background: #1652E8;
+}
+
+#sideNavWrapper.active span.msm-text {
+    display: inline-block;
+    
+}
+#sideNavWrapper span.msm-text {
+    display: none;
+}
+#sideNavWrapper.active nav.sidebar-nav {
+    max-width: 200px;
+    margin: 0 auto;
+    transition: .5s ease;
+}
+nav.sidebar-nav {
+    max-width: 80px;
+    margin-left: auto;
+    margin-right: 0;
+    transition: .5s ease;
+    height: 100%;
+}
+#sideNavWrapper.active .sidebar-nav .metismenu a {
+    text-align: left;
+    color: #04073B;
+}
+#sideNavWrapper .sidebar-nav .metismenu li.mm-active a,
+#sideNavWrapper .sidebar-nav .metismenu li a:hover {
+    color: #fff;
+}
+.sidebar-nav .metismenu a {
+    text-align: center;
+}
+
+nav.collapseSidenav {
+    position: relative;
+}
+
+nav.collapseSidenav ul.mm-has-child {
+    position: absolute;
+    left: 100%;
+    top: 0;
+    min-width: 200px;
+}
+
+nav.collapseSidenav ul.mm-has-child li {
+    position: relative;
+}
+
+nav.collapseSidenav ul.mm-has-child li a {
+    padding: 10px 10px 10px 20px;
+    text-align: left;
+}
+/* Metismenu CSS END */
+
+
+/* 2.2 Side Nav CSS END */
+
+
+
+
+/* 2.3 Crypto Page Content CSS */
+.cryptodash-full-wrapper {
+    position: relative;
+}
+
+.crypto-dash-sidenav {
+    position: relative;
+}
+.dashboard-content {
+    position: relative;
+    background-color: #fff;
+}
+.crypto-container {
+    position: relative;
+    padding: 0px 15px;
+}
+h2.crypto-stitle {
+    font-size: 24px;
+    line-height: 36px;
+    letter-spacing: 0px;
+    color: #39374A;
+    font-weight: 500;
+}
+
+p.crypto-subtitle {
+    font-size: 14px;
+    letter-spacing: 0px;
+    color: #39374A;
+    line-height: 22px;
+}
+
+/* Crypto Overview CSS */
+.crypto-overview-wrapper {
+    position: relative;
+    padding: 5px;
+}
+
+.crypto-overview-wrapper h2.crypto-stitle {
+    margin: 15px auto;
+}
+
+.crypto-overview {
+    position: relative;
+    border-radius: 5px;
+    padding: 25px 15px;
+    -webkit-box-shadow: 0 0 90px rgba(14,0,137,0.06);
+    -moz-box-shadow: 0 0 90px rgba(14,0,137,0.06);
+    box-shadow: 0 0 90px rgba(14,0,137,0.06);
+    
+}
+
+.crypto-current-balance {
+    position: relative;
+    padding: 10px;
+}
+
+.crypto-current-balance span {
+    font-size: 16px;
+    line-height: 26px;
+    letter-spacing: 0px;
+    font-weight: 400;
+    color: #39374A;
+}
+
+.crypto-current-balance h3.ccb {
+    font-size: 44px;
+    line-height: 60px;
+    font-weight: 400;
+    letter-spacing: 0px;
+    margin: 12px auto;
+}
+
+.crypto-current-balance p {
+    font-size: 22px;
+    letter-spacing: 0px;
+    color: #01CD8C;
+    font-weight: 400;
+    margin: 25px auto;
+}
+
+.crypto-current-balance p span {
+    color: #01CD8C;
+    font-weight: 400;
+    font-size: 12px;
+    margin-left: 5px;
+}
+
+.crypto-current-balance p i {
+    color: #01CD8C;
+    background-color: #0159CD;
+    font-size: 22px;
+    padding: 12px 10px;
+    margin-left: 10px;
+    border-radius: 5px;
+}
+
+
+a.btn-style-a {
+    font-size: 16px;
+    letter-spacing: 0px;
+    display: inline-block;
+    color: #01CD8C;
+    border: 1px solid #01CD8C;
+    padding: 8px 25px;
+    border-radius: 25px;
+}
+a.btn-style-a:hover {
+    background-color: #01CD8C;
+    color: #fff;
+}
+a.btn-style-a-small {
+    font-size: 12px;
+    letter-spacing: 0px;
+    display: inline-block;
+    color: #01CD8C;
+    border: 1px solid #01CD8C;
+    padding: 3px 20px;
+    border-radius: 25px;
+}
+a.btn-style-a-small:hover {
+    background-color: #01CD8C;
+    color: #fff;
+}
+.crypto-current-balance a.btn-style-a {
+    margin-top: 20px;
+}
+/* Crypto Overview CSS END */
+
+/* Crypto Wallet CSS */
+.crypto-wallet {
+    position: relative;
+    padding: 5px;
+}
+
+.crypto-wallet h2.crypto-stitle {
+    margin: 15px auto;
+}
+
+.crypto-wallet-tab {
+    position: relative;
+    border-radius: 5px;
+    padding: 15px;
+    -webkit-box-shadow: 0 0 90px rgba(14,0,137,0.06);
+    -moz-box-shadow: 0 0 90px rgba(14,0,137,0.06);
+    box-shadow: 0 0 90px rgba(14,0,137,0.06);
+    border-bottom: 10px solid #0159cd;
+}
+
+.crypto-wallet-tab nav.cw-nav {}
+
+.crypto-wallet-tab nav.cw-nav .nav-tabs {
+    border: none;
+}
+
+.crypto-wallet-tab nav.cw-nav .nav-tabs a {
+    border: none;
+    font-size: 15px;
+    letter-spacing: 0px;
+    color: #BDC5E1;
+    font-weight: 400;
+}
+
+.crypto-wallet-tab nav.cw-nav .nav-tabs a.active,.crypto-wallet-tab nav.cw-nav .nav-tabs a:hover {
+    color: #01cd8c;
+}
+
+.crypto-wallet-tab .cw-tab-content {
+    position: relative;
+}
+
+.crypto-wallet-tab .cw-tab-content .tab-pane {
+    position: relative;
+}
+
+
+.crypto-single-wallet {
+    position: relative;
+    padding: 8px 10px;
+}
+
+.crypto-single-wallet h3 {
+    font-size: 44px;
+    line-height: 54px;
+    font-weight: 400;
+    letter-spacing: 0px;
+    margin: 0px auto;
+}
+
+.crypto-single-wallet h3 span {
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+.crypto-single-wallet h5 {
+    font-size: 20px;
+    line-height: 28px;
+    letter-spacing: 0px;
+    font-weight: 400;
+    color: #80869B;
+    margin: 0px auto;
+}
+
+.crypto-single-wallet {}
+
+.crypto-single-wallet ul.market-info {
+    position: relative;
+    padding: 0;
+    list-style-type: none;
+}
+
+.crypto-single-wallet ul.market-info li {
+    position: relative;
+    display: inline-block;
+    margin: 15px auto;
+    width: calc(25% - 5px);
+    top: 0;
+}
+
+.crypto-single-wallet ul.market-info li span {
+    color: #80869B;
+    letter-spacing: 0px;
+    font-size: 14px;
+    margin: 10px auto;
+    display: block;
+}
+
+.crypto-single-wallet ul.market-info li h4 {
+    font-size: 22px;
+    letter-spacing: 0px;
+    font-weight: 500;
+}
+/* Crypto Wallet CSS END */
+
+/* Crypto Transaction History */
+.recent-transaction-history {
+    position: relative;
+}
+
+.recent-transaction-history h2.crypto-stitle {
+    margin: 15px auto;
+}
+
+.rth-table {
+    position: relative;
+    border-radius: 5px;
+    padding: 10px 25px;
+    -webkit-box-shadow: 0 0 90px rgba(14,0,137,0.06);
+    -moz-box-shadow: 0 0 90px rgba(14,0,137,0.06);
+    box-shadow: 0 0 90px rgba(14,0,137,0.06);
+}
+
+table.cryptodash-tableA {}
+
+table.cryptodash-tableA thead {}
+
+table.cryptodash-tableA thead tr {}
+
+table.cryptodash-tableA thead tr th {}
+
+table.cryptodash-tableA tbody {}
+
+table.cryptodash-tableA tbody tr {}
+
+table.cryptodash-tableA tbody tr td {}
+
+table.cryptodash-tableA thead tr th, table.cryptodash-tableA tbody tr td {
+    font-size: 16px;
+    color: #39374A;
+    font-weight: 400;
+    line-height: 28px;
+    letter-spacing: 0px;
+    border: none;
+    padding: 15px 0px;
+}
+
+table.cryptodash-tableA tbody tr td .currency-logo-name {
+    position: relative;
+    padding-left: 40px;
+    line-height: 30px;
+}
+
+table.cryptodash-tableA tbody tr td .currency-logo-name img {
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    top: 0;
+    left: 0;
+}
+
+table.cryptodash-tableA tbody tr td a.btn {
+    background-color: #0159CD;
+    font-size: 12px;
+    color: #fff;
+}
+
+table.cryptodash-tableA tr {
+    position: relative;
+}
+
+.transaction-status {
+    position: relative;
+}
+
+.transaction-status h2.crypto-stitle {
+    margin: 15px auto;
+}
+
+.transaction-status-pie {
+    position: relative;
+    border-radius: 5px;
+    padding: 64px 15px;
+    -webkit-box-shadow: 0 0 90px rgba(14,0,137,0.06);
+    -moz-box-shadow: 0 0 90px rgba(14,0,137,0.06);
+    box-shadow: 0 0 90px rgba(14,0,137,0.06);
+}
+
+/* Crypto Transaction History END */
+
+
+/* Crypto Token Calculator CSS */
+.tokenCalculation-wrapper {
+    position: relative;
+}
+
+.tokenCalculation-wrapper h2.crypto-stitle {
+    margin: 15px auto;
+}
+
+.token-calculator {
+    position: relative;
+    border-radius: 5px;
+    padding: 25px 15px;
+    -webkit-box-shadow: 0 0 90px rgba(14,0,137,0.06);
+    -moz-box-shadow: 0 0 90px rgba(14,0,137,0.06);
+    box-shadow: 0 0 90px rgba(14,0,137,0.06);
+}
+
+.token-calculator h4 {
+    font-size: 16px;
+    line-height: 26px;
+    letter-spacing: 0px;
+    font-weight: 400;
+    color: #39374A;
+}
+
+
+
+.tc-input {
+    position: relative;
+    max-width: 325px;
+    margin: 25px auto;
+}
+
+.tc-input input,
+.tc-input select {
+    font-size: 16px;
+    letter-spacing: 0px;
+    height: 50px;
+    color: #707070;
+    border: 1px solid #707070;
+    border-radius: 5px;
+    padding: 0px 12px;
+    font-weight: 500;
+}
+
+.tc-input input {
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    max-width: 240px;
+    width: 75%;
+}
+
+.tc-input select {
+    margin-left: -5px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    max-width: 80px;
+    width: 25%;
+}
+
+.token-calculator h3 {
+    color: #01CD8C;
+    font-size: 22px;
+    line-height: 32px;
+    letter-spacing: 0px;
+    font-weight: 400;
+    margin: 20px auto;
+}
+
+.token-calculator h3 span.currencyName {
+    font-size: 14px;
+}
+
+.token-calculator p {
+    color: #9D9D9D;
+    font-size: 14px;
+    line-height: 24px;
+    margin: 10px auto;
+}
+
+.token-calculator p i {
+    margin-right: 5px;
+}
+
+a.btn-style-b {
+    font-size: 18px;
+    letter-spacing: 0px;
+    color: #fff;
+    background-color: #01CD8C;
+    padding: 10px 25px;
+    display: inline-block;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.token-calculator a.btn-style-b {
+    display: block;
+    margin: 25px auto;
+}
+
+/* Crypto Token Calculator CSS END */
+
+
+/* Crypto Token Distribution CSS */
+.token-distribution-wrapper {
+    position: relative;
+}
+
+.token-distribution-wrapper h2.crypto-stitle {
+    margin: 15px auto;
+}
+
+.distribution-graph {
+    position: relative;
+    border-radius: 5px;
+    padding: 25px 15px;
+    -webkit-box-shadow: 0 0 90px rgba(14,0,137,0.06);
+    -moz-box-shadow: 0 0 90px rgba(14,0,137,0.06);
+    box-shadow: 0 0 90px rgba(14,0,137,0.06);
+}
+.distribution-graph .chart-container {
+    height: 305px;
+}
+.crypto-container {
+    padding: 0px 15px 25px;
+}
+/* Crypto Token Distribution CSS END */
+
+
+/* Profile Analytics CSS */
+.profile-analytics-wrapper {
+    position: relative;
+}
+
+.profile-analytics-wrapper h2.crypto-stitle {
+    margin: 18px auto;
+}
+
+.profile-analytics {
+    position: relative;
+    border-radius: 5px;
+    padding: 25px 15px;
+    -webkit-box-shadow: 0 0 90px rgba(14,0,137,0.06);
+    -moz-box-shadow: 0 0 90px rgba(14,0,137,0.06);
+    box-shadow: 0 0 90px rgba(14,0,137,0.06);
+}
+#panalyticsChart {
+    max-height: 285px !important;
+}
+/* Profile Analytics CSS END*/
+
+/* Buy Token CSS */
+.buy-token-wrapper {
+    position: relative;
+}
+
+.buy-token-wrapper p.crypto-subtitle {
+    margin-bottom: 15px;
+}
+
+.buy-token-wrapper h2.crypto-stitle {
+    margin-top: 15px;
+}
+
+.buy-token-table-box {
+    position: relative;
+    border-radius: 5px;
+    padding: 25px 15px;
+    -webkit-box-shadow: 0 0 90px rgba(14,0,137,0.06);
+    -moz-box-shadow: 0 0 90px rgba(14,0,137,0.06);
+    box-shadow: 0 0 90px rgba(14,0,137,0.06);
+}
+
+table.buytcn {
+    position: relative;
+    width: 100%;
+}
+
+table.buytcn thead {
+    position: relative;
+}
+
+table.buytcn thead tr {
+    position: relative;
+}
+
+table.buytcn thead thead {}
+
+table.buytcn thead tr th {
+    font-size: 16px;
+    letter-spacing: 0px;
+    color: #8690B4;
+    font-weight: 400;
+    line-height: 45px;
+}
+
+table.buytcn tbody {
+    position: relative;
+}
+
+table.buytcn tbody tr {
+    position: relative;
+    background-color: #F8F8F8;
+    border-top: 18px solid #fff;
+}
+
+table.buytcn tbody tr td {
+    position: relative;
+    padding: 10px;
+}
+
+table.buytcn thead tr:before {
+    position: absolute;
+    /* content: ''; */
+    /* width: 100%; */
+    /* height: 2px; */
+    /* left: 0; */
+    /* top: 45px; */
+    /* background-color: #9690b4; */
+}
+
+.single-crncy {
+    position: relative;
+    padding-left: 60px;
+}
+
+.single-crncy .sc-icon {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 50px;
+    height: 50px;
+}
+
+.single-crncy .sc-icon img {
+    height: 100%;
+    width: 100%;
+}
+
+.single-crncy .sc-intext {
+    position: relative;
+    padding: 6px 0px;
+}
+
+.single-crncy .sc-intext h5 {
+    letter-spacing: 0px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #505874;
+    line-height: 22px;
+}
+
+.single-crncy .sc-intext p {
+    font-size: 12px;
+    line-height: 18px;
+    color: #505874;
+}
+
+span.sc-wallet {
+    font-size: 12px;
+    color: #505874;
+    line-height: 18px;
+}
+/* Buy Token CSS END */
+
+/* Get Estimate Wrapper */
+.tcw2 {}
+
+.tcw2 h2.crypto-stitle {
+    margin-bottom: 0px;
+}
+
+.tcw2 p.crypto-subtitle {
+    margin-bottom: 15px;
+}
+
+.tc2 {}
+
+.tc2 .tc-input {
+    margin-left: 0;
+    margin-right: auto;
+    max-width: 250px;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.tc2 .tc-input input {
+    max-width: 175px;
+    width: 170px;
+}
+
+.tc2 .tc-input select {
+    width: 80px;
+}
+
+.tc2 h3 {
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.tc2 p {
+    text-align: right;
+}
+
+/* Get Estimate Wrapper END */
+
+/* Token Buy Analytics CSS */
+.token-buy-analitycs-wrapper {
+    position: relative;
+}
+
+.token-buy-analitycs-wrapper h2.crypto-stitle {
+    margin: 15px auto;
+}
+
+.tokenBuyAnalytics-chart {
+    position: relative;
+    border-radius: 5px;
+    padding: 25px 5px;
+    -webkit-box-shadow: 0 0 90px rgba(14,0,137,0.06);
+    -moz-box-shadow: 0 0 90px rgba(14,0,137,0.06);
+    box-shadow: 0 0 90px rgba(14,0,137,0.06);
+}
+#tokenBuyAnalyticsChart {
+    height: 400px !important;
+}
+/* Token Buy Analytics CSS END*/
+
+
+
+
+
+/* Transaction CSS */
+
+.monthly-transaction-history-wrapper {
+    position: relative;
+}
+
+.monthly-transaction-history-wrapper h2.crypto-stitle {
+    margin: 15px auto;
+}
+
+.m-transaction-history {
+    position: relative;
+    border-radius: 5px;
+    padding: 25px 15px;
+    -webkit-box-shadow: 0 0 90px rgba(14,0,137,0.06);
+    -moz-box-shadow: 0 0 90px rgba(14,0,137,0.06);
+    box-shadow: 0 0 90px rgba(14,0,137,0.06);
+}
+
+.rt-received-send-wrapper {
+    position: relative;
+}
+
+.rt-received-send-wrapper h2.crypto-stitle {
+    margin: 15px auto;
+}
+
+.rt-received-send {
+    position: relative;
+    border-radius: 5px;
+    padding: 25px 15px;
+    -webkit-box-shadow: 0 0 90px rgba(14,0,137,0.06);
+    -moz-box-shadow: 0 0 90px rgba(14,0,137,0.06);
+    box-shadow: 0 0 90px rgba(14,0,137,0.06);
+}
+
+.rt-received-send select {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.rt-received-send h4 {
+    font-size: 16px;
+    letter-spacing: 0px;
+    font-weight: 500;
+    color: #39374A;
+    line-height: 24px;
+    margin-bottom: 15px;
+}
+
+.rt-received-send h4 span {
+    float: right;
+}
+
+table.trs-table {
+    position: relative;
+    width: 100%;
+}
+
+table.trs-table th,table.trs-table td {
+    border: 1px solid #DEDEDE;
+    text-align: center;
+    font-size: 12px;
+    letter-spacing: 0px;
+    color: #39374A;
+    line-height: 22px;
+    padding: 5px;
+    font-weight: 500;
+}
+
+
+.transaction-details-wrapper {
+    position: relative;
+}
+
+.transaction-details-wrapper h2.crypto-stitle {
+    margin: 15px auto;
+}
+
+.transaction-details-table {
+    position: relative;
+    border-radius: 5px;
+    padding: 0px;
+    -webkit-box-shadow: 0 0 90px rgba(14,0,137,0.06);
+    -moz-box-shadow: 0 0 90px rgba(14,0,137,0.06);
+    box-shadow: 0 0 90px rgba(14,0,137,0.06);
+}
+
+table.tdt {
+    position: relative;
+    width: 100%;
+}
+
+table.tdt th,table.tdt td {
+    border: 1px solid #DBDBDB;
+    font-size: 14px;
+    letter-spacing: 0px;
+    font-weight: 400;
+    color: #505874;
+    line-height: 22px;
+    padding: 20px 5px 0px;
+    text-align: center;
+}
+
+table.tdt thead th {
+    font-size: 16px;
+    color: #39374A;
+    font-weight: 500;
+    padding-bottom: 20px;
+}
+table.tdt td {
+    border-top: none;
+    border-bottom: none;
+}
+table.tdt tbody tr td:first-child {
+    text-align: left;
+}
+
+table.tdt tbody tr td img.tdt-currency-icon {margin-left: 12px;margin-right: 10px;}
+
+img.tdt-currency-icon {
+    height: 40px;
+    width: 40px;
+}
+
+table.tdt tbody tr td {
+    position: relative;
+}
+
+table.tdt tbody tr td i {
+    font-size: 20px;
+}
+
+table.tdt tbody tr td i.fa-check-circle-o {
+    color: #01CD8C;
+}
+
+table.tdt tbody tr td i.fa-times-circle-o {
+    color: #DBDBDB;
+}
+
+table.tdt tbody tr:last-child td
+ {
+    padding-bottom: 20px;
+}
+
+/* Transaction CSS END*/
+
+
+/* Haspower CSS */
+.hashpower-balance-wrapper {
+    position: relative;
+}
+
+.hashpower-balance-wrapper h2.crypto-stitle {
+    margin: 15px auto;
+}
+
+.hashpb-chart {
+    position: relative;
+    border-radius: 5px;
+    padding: 20px 10px;
+    -webkit-box-shadow: 0 0 90px rgba(14,0,137,0.06);
+    -moz-box-shadow: 0 0 90px rgba(14,0,137,0.06);
+    box-shadow: 0 0 90px rgba(14,0,137,0.06);
+}
+
+.pichart-box-with-middle-text {
+    position: absolute;
+    height: 100%;
+    width: calc(100% - 180px);
+    top: 0;
+    left: 0;
+}
+.hashpb-chart .pie-2middle {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+
+
+  .hashpb-chart .pie-2middle h4 {
+    position: absolute;
+    font-size: 16px;
+    color: #373750;
+    letter-spacing: 0px;
+    font-weight: 700;
+    left: calc(50% - 32px);
+    top: calc(50% - 10px);
+}
+
+.buy-hashpower-bitcoin {
+    position: relative;
+}
+
+.buy-hashpower-bitcoin h2.crypto-stitle {
+    margin: 15px auto;
+}
+
+
+
+.crypto-pricing-a {
+    border-radius: 5px;
+    padding: 10px;
+    -webkit-box-shadow: 0 0 90px rgba(14,0,137,0.06);
+    -moz-box-shadow: 0 0 90px rgba(14,0,137,0.06);
+    box-shadow: 0 0 90px rgba(14,0,137,0.06);
+}
+
+.pricing-single-wrapper {
+    position: relative;
+}
+
+.pricing-single-wrapper h2.crypto-stitle {
+    margin: 15px auto;
+}
+
+.crypto-pricing-a .cp-head {
+    position: relative;
+    min-height: 50px;
+    margin: 15px auto;
+    padding-left: 50px;
+}
+
+.crypto-pricing-a .cp-head img {
+    position: absolute;
+    height: 45px;
+    width: 45px;
+    margin-right: 5px;
+    left: 0;
+    top: 0;
+}
+
+.crypto-pricing-a .cp-head h5 {
+    color: #373750;
+    letter-spacing: 0px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+}
+
+.crypto-pricing-a .cp-price {
+    position: relative;
+    text-align: center;
+    margin: 25px auto;
+}
+
+.crypto-pricing-a .cp-price h4 {font-size: 22px;letter-spacing: 0px;color: #373750;font-weight: 600;line-height: 32px;}
+
+.crypto-pricing-a .cp-price p {
+    font-size: 18px;
+    color: #373750;
+    line-height: 28px;
+}
+
+
+
+.crypto-pricing-a .cp-btn {
+    position: relative;
+    text-align: center;
+    margin-bottom: 20px;
+}
+a.btn-style-b-m.active,
+a.btn-style-b-m:hover {
+    background-color: #01CD8C;
+    color: #fff;
+}
+
+.add-new-coin-box {
+    position: relative;
+}
+
+.add-new-coin-box h2.crypto-stitle {
+    margin: 15px auto;
+}
+
+.addNewCoin-box {
+    position: relative;
+    border-radius: 5px;
+    padding: 18px 15px;
+    -webkit-box-shadow: 0 0 90px rgba(14,0,137,0.06);
+    -moz-box-shadow: 0 0 90px rgba(14,0,137,0.06);
+    box-shadow: 0 0 90px rgba(14,0,137,0.06);
+}
+
+.addNewCoin-box label {
+    display: block;
+    color: #373750;
+    letter-spacing: 0px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+}
+
+.addNewCoin-box select {
+    width: 100%;
+    margin: 10px auto;
+}
+
+.addNewCoin-box h4 {
+    font-size: 22px;
+    letter-spacing: 0px;
+    color: #373750;
+    font-weight: 600;
+    line-height: 32px;
+    margin: 20px auto;
+}
+
+.add-new-coin-box a.btn-style-b-m {
+    margin-bottom: 10px;
+}
+
+
+
+.single-configuration-block {
+    position: relative;
+    margin: 25px auto;
+    border-radius: 5px;
+    padding: 25px;
+    -webkit-box-shadow: 0 0 90px rgba(14,0,137,0.06);
+    -moz-box-shadow: 0 0 90px rgba(14,0,137,0.06);
+    box-shadow: 0 0 90px rgba(14,0,137,0.06);
+}
+
+.single-configuration-block .scb-icon {
+    position: absolute;
+    left: 18px;
+    top: 16px;
+    width: 50px;
+    height: 50px;
+    background-color: #FF6600;
+    text-align: center;
+    border-radius: 5px;
+    padding-top: 3px;
+}
+
+.single-configuration-block .scb-icon i {
+    color: #fff;
+    font-size: 30px;
+    line-height: 44px;
+}
+
+.single-configuration-block h4 {
+    display: inline-block;
+    margin-left: 60px;
+    letter-spacing: 0px;
+    color: #373750;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 36px;
+}
+
+.single-configuration-block a {
+    display: inline-block;
+    margin-left: 25px;
+    float: right;
+    margin-top: -3px;
+}
+/* Haspower CSS END */
+
+
+
+/* Output Chart CSS */
+
+.mining-output-wrapper {
+    position: relative;
+}
+
+.mining-output-wrapper h2.crypto-stitle {
+    margin: 0px auto 15px;
+}
+
+.mining-output-chart {
+    position: relative;
+    border-radius: 5px;
+    padding: 15px;
+    -webkit-box-shadow: 0 0 90px rgba(14,0,137,0.06);
+    -moz-box-shadow: 0 0 90px rgba(14,0,137,0.06);
+    box-shadow: 0 0 90px rgba(14,0,137,0.06);
+}
+
+
+
+
+/* Output Chart CSS END */
+
+
+/* Wallet Details CSS */
+.wallet-details-content-wrapper {
+    position: relative;
+    padding: 15px 0px;
+}
+
+h2.wd-page-title {
+    font-size: 28px;
+    letter-spacing: 0px;
+    font-weight: 500;
+    color: #39374A;
+    line-height: 36px;
+}
+
+.wallet-details-content-wrapper h2.wd-page-title {
+    margin: 15px auto;
+}
+
+.ico-destribution-token {
+    position: relative;
+    background-color: #F8FAFF;
+    -webkit-box-shadow: 0 0 90px rgba(14,0,137,0.06);
+    -moz-box-shadow: 0 0 90px rgba(14,0,137,0.06);
+    box-shadow: 0 0 90px rgba(14,0,137,0.06);
+    border-radius: 5px;
+}
+
+.w-balance-tavle {
+    position: relative;
+    background-color: #fff;
+    padding: 0px 15px;
+}
+
+.ico-destribution-token h2.crypto-stitle {
+    padding: 15px;
+}
+
+table.wbt {
+    position: relative;
+    width: 100%;
+}
+
+table.wbt tr {}
+
+table.wbt tr td {
+    border: 1px solid #D2D2D2;
+    border-left: 0px;
+    border-right: 0px;
+    padding: 12px;
+    position: relative;
+}
+
+table.wbt tr td .wbt-crncy {}
+
+table.wbt tr td .wbt-crncy img {
+    height: 40px;
+    width: 40px;
+}
+
+table.wbt tr td .wbt-crncy span {
+    font-size: 18px;
+    letter-spacing: 0px;
+    color: #39374A;
+    line-height: 26px;
+    display: inline-block;
+    margin-left: 10px;
+}
+
+table.wbt tr td:last-child {
+}
+
+table.wbt tr:first-child td {
+    border-top: 0px;
+}
+
+table.wbt tr:last-child td {
+    border-bottom: 0px;
+}
+
+.usdt-other {
+    position: relative;
+    text-align: right;
+}
+
+.usdt-other h4 {
+    font-size: 20px;
+    line-height: 26px;
+    letter-spacing: 0px;
+    font-weight: 600;
+    color: #39374A;
+}
+
+.usdt-other p {
+    font-size: 16px;
+    letter-spacing: 0px;
+    color: #39374A;
+    line-height: 22px;
+}
+
+.ico-destribution-bounce-rate {
+    position: relative;
+    background-color: #F8FAFF;
+    -webkit-box-shadow: 0 0 90px rgba(14,0,137,0.06);
+    -moz-box-shadow: 0 0 90px rgba(14,0,137,0.06);
+    box-shadow: 0 0 90px rgba(14,0,137,0.06);
+    border-radius: 5px;
+}
+
+.ico-destribution-bounce-rate h2.crypto-stitle {
+    padding: 15px;
+}
+
+.wallet-analytics-chart {
+    position: relative;
+    background-color: #fff;
+    padding: 15px;
+}
+
+.added-value-box {
+    position: absolute;
+    right: 15px;
+    top: 30px;
+    width: 40%;
+    text-align: right;
+}
+
+.added-value-box p {
+    color: #01CD8C;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 400;
+}
+
+.wallet-analytics-chart select {
+    width: 100%;
+    max-width: 200px;
+    font-size: 22px;
+}
+
+.wallet-analytics-chart h4 {
+    color: #04073B;
+    font-size: 26px;
+    letter-spacing: 0px;
+    font-weight: 600;
+    line-height: 36px;
+    margin: 10px auto;
+}
+.wallet-analytics-chart ul.nav li a {
+    margin: 5px;
+    cursor: pointer;
+}
+
+.wallet-analytics-chart ul.nav {
+    position: relative;
+    margin: 15px auto 5px;
+}
+/* Wallet Details CSS END*/
+
+
+/* Ico Distribution CSS */
+.ico-distribution-wrapper {
+    position: relative;
+}
+
+.ico-distribution-wrapper h2.crypto-stitle {
+    margin: 15px auto;
+}
+
+.ico-distribution-box {
+    position: relative;
+    border-radius: 5px;
+    padding: 0px;
+    -webkit-box-shadow: 0 0 90px rgba(14,0,137,0.06);
+    -moz-box-shadow: 0 0 90px rgba(14,0,137,0.06);
+    box-shadow: 0 0 90px rgba(14,0,137,0.06);
+    border-top: 5px solid #1652E8;
+    background-color: #FBFBFB;
+}
+
+.ico-distribution-box .idb-head {
+    position: relative;
+    padding: 30px 15px;
+    background-color: #fff;
+}
+
+.ico-distribution-box .idb-head p {
+    font-size: 14px;
+    letter-spacing: 0px;
+    color: #01CD8C;
+    line-height: 22px;
+    font-weight: 500;
+}
+
+.ico-distribution-box .idb-head h4 {
+    color: #39374A;
+    letter-spacing: 0px;
+    font-size: 24px;
+    line-height: 36px;
+    font-weight: 500;
+    margin: 5px auto;
+}
+
+.ico-distribution-box .idb-table {
+    position: relative;
+    padding: 30px 0px 24px;
+}
+
+.ico-distribution-box .idb-table p {
+    font-size: 14px;
+    letter-spacing: 0px;
+    color: #01CD8C;
+    line-height: 22px;
+    font-weight: 500;
+    padding: 0px 15px;
+}
+
+table.idbt {
+    position: relative;
+    width: 100%;
+    margin-top: 10px;
+}
+
+table.idbt tr {}
+
+table.idbt tr td {
+    position: relative;
+    border-bottom: 1px solid #E2E2E2;
+    padding: 15px;
+}
+
+table.idbt tr td h4 {
+    color: #39374A;
+    letter-spacing: 0px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.ico-distribution-box table.idbt tr td p {
+    color: #39374A;
+    padding: 0px;
+}
+
+table.idbt tr:last-child td {
+    border-bottom: 0px;
+}
+
+.ico-distribution-bounce-rate-wrapper {
+    position: relative;
+}
+
+.ico-distribution-bounce-rate-wrapper h2.crypto-stitle {
+    margin: 15px auto;
+}
+
+.ico-distribution-bounceRate-box {
+    position: relative;
+    border-radius: 5px;
+    padding: 15px;
+    -webkit-box-shadow: 0 0 90px rgba(14,0,137,0.06);
+    -moz-box-shadow: 0 0 90px rgba(14,0,137,0.06);
+    box-shadow: 0 0 90px rgba(14,0,137,0.06);
+}
+
+.ico-distribution-bounceRate-box #icoDbounceRate {
+    width: 100%;
+}
+
+
+.ico-statistics-wrapper {
+    position: relative;
+}
+
+.ico-statistics-wrapper h2.crypto-stitle {
+    margin: 15px auto;
+}
+
+.ico-statistics-chart {
+    position: relative;
+    border-radius: 5px;
+    padding: 40px 5px;
+    -webkit-box-shadow: 0 0 90px rgba(14,0,137,0.06);
+    -moz-box-shadow: 0 0 90px rgba(14,0,137,0.06);
+    box-shadow: 0 0 90px rgba(14,0,137,0.06);
+}
+
+.ico-important-info-wrapper {
+    position: relative;
+}
+
+.ico-important-info-wrapper h2.crypto-stitle {
+    margin: 15px auto;
+}
+
+.ico-important-box {
+    position: relative;
+    border-radius: 5px;
+    padding: 25px 0px;
+    -webkit-box-shadow: 0 0 90px rgba(14,0,137,0.06);
+    -moz-box-shadow: 0 0 90px rgba(14,0,137,0.06);
+    box-shadow: 0 0 90px rgba(14,0,137,0.06);
+}
+
+.ico-important-box p {
+    color: #39374A;
+    font-size: 14px;
+    letter-spacing: 0px;
+    line-height: 20px;
+    font-weight: 400;
+}
+
+.ico-ibox {
+    position: relative;
+    background-color: #F7F7F7;
+    padding: 15px;
+    margin: 15px auto;
+}
+
+.ico-ibox .icibox-left {
+    position: relative;
+    width: 100%;
+    max-width: 130px;
+    display: inline-block;
+}
+
+.ico-ibox .icibox-right {
+    position: relative;
+    max-width: 225px;
+    display: inline-block;
+    width: 100%;
+}
+
+.ico-ibox .icibox-button {
+    position: relative;
+    display: inline-block;
+    max-width: 140px;
+    width: 100%;
+}
+
+.ico-ibox .icibox-left h5 {
+    font-size: 16px;
+    letter-spacing: 0px;
+    font-weight: 600;
+    color: #39374A;
+    line-height: 24px;
+}
+
+.ico-ibox .icibox-left p {
+    color: #39374A;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 22px;
+    margin: 5px auto 0px;
+}
+
+.ico-important-box>p {
+    padding: 0px 15px;
+}
+
+.ico-important-box .ico-mi {
+    position: relative;
+    padding: 15px;
+}
+
+.ico-important-box .ico-mi h3 {
+    color: #39374A;
+    font-weight: 600;
+    font-size: 24px;
+    letter-spacing: 0px;
+    line-height: 36px;
+    margin-bottom: 12px;
+}
+
+.ico-important-box .ico-mi p {
+    margin: 15px auto;
+}
+
+.icibox-right p {
+    color: #39374A;
+    font-size: 14px;
+    margin: 5px auto;
+    font-weight: 500;
+}
+
+/* Ico Distribution CSS END */
+
+/* Cryptodash Page Text Conetent CSS */
+.cryptodash-section-text-wrapper {
+    position: relative;
+}
+
+.cryptodash-section-text-wrapper h2.crypto-stitle {
+    margin: 15px auto;
+}
+
+.cd-section-text {position: relative;border-radius: 5px;padding: 25px;-webkit-box-shadow: 0 0 90px rgba(14,0,137,0.06);-moz-box-shadow: 0 0 90px rgba(14,0,137,0.06);box-shadow: 0 0 90px rgba(14,0,137,0.06);}
+
+.cd-section-text p {
+    font-size: 14px;
+    line-height: 22px;
+    margin-bottom: 20px;
+    font-weight: 400;
+}
+
+.cd-section-text p:last-child {
+    margin-bottom: 0px;
+}
+
+.how-work-video {
+    position: relative;
+}
+.how-work-video h2.crypto-stitle {
+    margin: 15px auto;
+}
+
+
+.hhv iframe {
+    width: 100%;
+    height: 600px;
+    border: none;
+}
+
+
+
+
+
+/* Crypto Dash Inbox CSS */
+.inbox_people {
+    background: #F1F3F9;
+    float: left;
+    overflow: hidden;
+    width: 30%;
+    border-right: 1px solid #c4c4c4;
+}
+
+.inbox_msg {
+    clear: both;
+    overflow: hidden;
+}
+.top_spac{ 
+    margin: 20px 0 0;
+}
+
+
+.recent_heading {
+    float: left; 
+    width:40%;
+}
+.srch_bar {
+    display: inline-block;
+    text-align: right;
+    width: 60%;
+    position: relative;
+}
+.headind_srch {
+    overflow: hidden;
+    border-bottom: 1px solid #c4c4c4;
+    padding: 15px;
+    position: relative;
+}
+
+.recent_heading h4 {
+    color: #39374a;
+    font-size: 18px;
+    margin: auto;
+    letter-spacing: 0px;
+    font-weight: 600;
+}
+.srch_bar input {
+    border: 1px solid #cdcdcd;
+    border-width: 0 0 1px 0;
+    width: 80%;
+    padding: 2px 0 4px 6px;
+    background: none;
+    font-size: 14px;
+    height: 20px;
+    letter-spacing: 0px;
+    border-radius: 0px;
+    font-weight: 300;
+}
+.srch_bar .input-group-addon button {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    border: none;
+    padding: 0;
+    color: #707070;
+    font-size: 14px;
+    height: 30px;
+}
+.srch_bar .input-group-addon {
+    margin: 0 0 0 -22px;
+}
+
+.chat_ib h5 {
+    font-size: 14px;
+    color: #39374a;
+    margin: 0 0 8px 0;
+    letter-spacing: 0px;
+    font-weight: 500;
+}
+.chat_ib h5 span{ 
+    font-size:13px; 
+    float:right;
+}
+.chat_ib p {
+    font-size: 13px;
+    line-height: 20px;
+    color: #989898;
+    margin: 5px auto;
+}
+.chat_img {
+  float: left;
+  width: 11%;
+}
+.chat_ib {
+  float: left;
+  padding: 0 0 0 15px;
+  width: 88%;
+}
+
+.chat_people{ 
+    overflow:hidden; 
+    clear:both;
+}
+.chat_list {
+  border-bottom: 1px solid #c4c4c4;
+  margin: 0;
+  padding: 18px 16px 10px;
+}
+.inbox_chat { 
+    height: 650px;
+    overflow-y: scroll;
+}
+
+.active_chat{ 
+    background:#ebebeb;
+}
+
+.incoming_msg_img {
+  display: inline-block;
+  width: 6%;
+}
+.received_msg {
+  display: inline-block;
+  padding: 0 0 0 10px;
+  vertical-align: top;
+  width: 92%;
+ }
+ .received_withd_msg p {
+    background: #ebebeb none repeat scroll 0 0;
+    border-radius: 3px;
+    color: #646464;
+    font-size: 14px;
+    line-height: 22px;
+    margin: 0;
+    padding: 5px 10px 5px 12px;
+    width: 100%;
+}
+.time_date {
+    color: #747474;
+    display: block;
+    font-size: 10px;
+    margin: 0px auto;
+}
+.received_withd_msg { 
+    width: 57%;
+}
+.mesgs {
+    float: left;
+    padding: 45px 25px;
+    width: 70%;
+}
+
+ .sent_msg p {
+  background: #05728f none repeat scroll 0 0;
+  border-radius: 3px;
+  font-size: 14px;
+  line-height: 22px;
+  margin: 0; color:#fff;
+  padding: 5px 10px 5px 12px;
+  width:100%;
+}
+.outgoing_msg{ 
+    overflow:hidden; 
+    margin:26px 0 26px;
+}
+.sent_msg {
+  float: right;
+  width: 46%;
+}
+.input_msg_write textarea {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    border: medium none;
+    color: #4c4c4c;
+    font-size: 14px;
+    min-height: 95px;
+    letter-spacing: 0px;
+    width: 100%;
+    font-weight: 300;
+    padding-right: 60px;
+    line-height: 18px;
+    padding-top: 12px;
+}
+.type_msg {
+    border-top: 1px solid #c4c4c4;
+    position: relative;
+}
+.msg_send_btn {
+    background: #05728f none repeat scroll 0 0;
+    border: none;
+    border-radius: 50%;
+    color: #fff;
+    cursor: pointer;
+    font-size: 17px;
+    height: 33px;
+    position: absolute;
+    right: 23px;
+    top: 25px;
+    width: 33px;
+    padding: 0;
+    text-align: center;
+}
+.messaging {
+    position: relative;
+    padding: 0px;
+    background-color: #F8FAFF;
+    margin: 15px auto;
+}
+.msg_history {
+  height: 516px;
+  overflow-y: auto;
+}
+
+
+
+.chtt-uploder input[type="file"] {
+    display: none;
+}
+
+
+.custom-file-upload {
+    display: inline-block;
+    padding: 10px 12px;
+    cursor: pointer;
+    font-size: 20px;
+    color: #000;
+}
+
+.cht-type-wrapper {
+    position: relative;
+    padding-left: 25px;
+}
+
+.chtt-uploder {
+    position: absolute;
+    left: 0;
+    top: 20px;
+    border: none;
+    box-shadow: none;
+}
+
+.chtt-uploder input {
+    border: none;
+    box-shadow: none;
+}
+/* width */
+.input_msg_write textarea::-webkit-scrollbar,
+.inbox_chat::-webkit-scrollbar,
+.msg_history::-webkit-scrollbar {
+    width: 5px;
+}
+  
+  /* Track */
+  .input_msg_write textarea::-webkit-scrollbar-track,
+.inbox_chat::-webkit-scrollbar-track,
+.msg_history::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+   
+  /* Handle */
+  .input_msg_write textarea::-webkit-scrollbar-thumb,
+.inbox_chat::-webkit-scrollbar-thumb,
+.msg_history::-webkit-scrollbar-thumb {
+    background: #888; 
+}
+  
+  /* Handle on hover */
+  .input_msg_write textarea::-webkit-scrollbar-thumb:hover,
+.inbox_chat::-webkit-scrollbar-thumb:hover,
+.msg_history::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+
+
+
+
+
+.cht-type-wrapper textarea::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    padding-top: 25px;
+}
+.cht-type-wrapper textarea::-moz-placeholder { /* Firefox 19+ */
+    padding-top: 25px;
+}
+.cht-type-wrapper textarea:-ms-input-placeholder { /* IE 10+ */
+    padding-top: 25px;
+}
+.cht-type-wrapper textarea:-moz-placeholder { /* Firefox 18- */
+    padding-top: 25px;
+}
+/* Crypto Dash Inbox CSS END*/
+
+
+
+
+
+
+
+/* Cryptodash Page Text Conetent CSS END*/
+
+
+
+.cc-box input[type="file"] {
+    display: none;
+}
+.i-custom-file-upload {
+    display: inline-block;
+    cursor: pointer;
+    font-size: 18px;
+    color: #000;
+    padding-left: 65px;
+}
+
+.cfi-button {
+    font-size: 14px;
+    letter-spacing: 0px;
+    display: inline-block;
+    border: 1px solid #1652E8;
+    padding: 5px 25px;
+    border-radius: 5px;
+    background-color: #1652E8;
+    color: #fff;
+    cursor: pointer;
+    transition: .5s ease;
+}
+
+
+
+
+.cfi-button:hover {
+    -webkit-box-shadow: 0 0 90px rgba(14,0,137,0.06);
+    -moz-box-shadow: 0 0 90px rgba(14,0,137,0.06);
+    box-shadow: 0 0 90px rgba(14,0,137,0.06);
+}
+
+.cc-wrapper {
+    position: relative;
+    border-radius: 5px;
+    padding: 25px;
+    -webkit-box-shadow: 0 0 90px rgba(14,0,137,0.06);
+    -moz-box-shadow: 0 0 90px rgba(14,0,137,0.06);
+    box-shadow: 0 0 90px rgba(14,0,137,0.06);
+}
+
+.cc-wrapper h3 {
+    font-size: 22px;
+    line-height: 32px;
+    letter-spacing: 0px;
+    font-weight: 500;
+    color: #2A2933;
+}
+
+.cc-box {
+    position: relative;
+    margin: 15px auto;
+    border: 1px solid #E6E6E6;
+    padding: 20px;
+}
+
+.cfs {
+    position: relative;
+}
+
+.cfs select {
+    width: 100%;
+    padding-left: 80px;
+    height: 65px;
+    border: 1px solid #E6E6E6;
+    font-weight: 300;
+    font-size: 20px;
+    text-align: center;
+    color: #292832;
+}
+
+.cfs label {
+    position: absolute;
+    left: 12px;
+    top: 12px;
+    font-size: 36px;
+}
+
+.cc-box label i {
+    color: #1652E8;
+}
+
+.cfs select option {}
+
+.i-custom-file-upload i {
+    font-size: 36px;
+}
+
+.i-custom-file-upload span.h4 {
+    font-size: 18px;
+    line-height: 28px;
+    letter-spacing: 0px;
+    font-weight: 500;
+    display: inline-block;
+    margin-top: 5px;
+}
+
+.i-custom-file-upload span {
+    font-size: 12px;
+    display: inline-block;
+    margin-left: 10px;
+    color: #2A2933;
+}
+
+.i-custom-file-upload i {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+}
+
+.cciu {
+    position: relative;
+    margin: 0px auto;
+    border: 1px solid #E6E6E6;
+}
+
+.i-custom-file-upload p {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0px;
+    line-height: 16px;
+    margin-bottom: 5px;
+}
+.i-custom-file-upload span.p {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0px;
+    line-height: 16px;
+    margin-bottom: 5px;
+}
+.crypto-form-wrapper {
+    position: relative;
+    margin: 15px auto;
+    border-radius: 5px;
+    padding: 25px;
+    -webkit-box-shadow: 0 0 90px rgba(14,0,137,0.06);
+    -moz-box-shadow: 0 0 90px rgba(14,0,137,0.06);
+    box-shadow: 0 0 90px rgba(14,0,137,0.06);
+}
+
+.crypto-form-wrapper h3 {
+    font-size: 24px;
+    letter-spacing: 0px;
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+
+form.crypto-form {
+    position: relative;
+}
+
+.cfi {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.cfi label {
+    display: block;
+    font-size: 14px;
+    font-weight: 400;
+    color: #2A2933;
+    margin-bottom: 15px;
+}
+
+.cfi input {
+    width: 100%;
+    font-size: 16px;
+    letter-spacing: 0px;
+    font-weight: 300;
+    border: 1px solid #E6E6E6;
+}
+
+/* 2.3 Crypto Page Content CSS END */
+
+
+
+/* 2.4 Login Registration Page CSS */
+.login-register-wrapper {
+    position: relative;
+    background-image: url(../img/bg/login-register-bg.jpg);
+    background-size: 100% 100%;
+    padding: 15px;
+    min-height: 100vh;
+}
+
+.lr-box {
+    position: relative;
+    max-width: 660px;
+    margin: 50px auto;
+    background-color: #fff;
+}
+
+.lr-form {
+    margin-left: -30px;
+    background-color: #fff;
+    width: 100%;
+    padding: 25px;
+}
+
+.lr-form h3 {
+    font-size: 24px;
+    letter-spacing: 0px;
+    font-weight: 600;
+    line-height: 36px;
+    margin: 0px auto 10px;
+    color: #2A2933;
+}
+
+.lr-form p {
+    color: #2A2933;
+    font-size: 16px;
+    line-height: 24px;
+    margin: 10px auto;
+}
+
+.lr-form .cfi {}
+
+.lr-form .cfi input {
+    font-size: 14px;
+    height: 40px;
+}
+.lr-form .cfi-button {
+    padding: 5px 25px;
+    line-height: 22px;
+    height: 40px;
+    margin-top: 10px;
+    display: block;
+}
+
+
+.login-form {
+    padding-top: 100px;
+}
+
+.needac-forgetpass {
+    position: relative;
+    min-height: 35px;
+}
+
+.needac-forgetpass a {
+    font-size: 13px;
+    letter-spacing: 0px;
+    color: #2A2933;
+    line-height: 20px;
+    display: inline-flex;
+    margin-bottom: 20px;
+}
+
+.needac-forgetpass a.lfpass {
+    float: left;
+}
+
+.needac-forgetpass a.needacc {
+    float: right;
+}
+
+.needac-forgetpass a:hover {
+    color: #1652e8;
+}
+/* Login Registration Page CSS END */
+
+
+a#scrollUp {
+    display: none;
+}
+
+
+/* Elements CSS */
+
+.buttons-wrapper {
+    position: relative;
+    border-radius: 5px;
+    padding: 25px;
+    -webkit-box-shadow: 0 0 90px rgba(14,0,137,0.06);
+    -moz-box-shadow: 0 0 90px rgba(14,0,137,0.06);
+    box-shadow: 0 0 90px rgba(14,0,137,0.06);
+}
+
+.buttons-wrapper button,.buttons-wrapper a {
+    margin-bottom: 20px;
+    margin-right: 20px;
+}
+.element-margin {
+    margin: 15px auto;
+}
+
+.f-element-wrapper {
+    position: relative;
+    border-radius: 5px;
+    padding: 25px;
+    -webkit-box-shadow: 0 0 90px rgba(14,0,137,0.06);
+    -moz-box-shadow: 0 0 90px rgba(14,0,137,0.06);
+    box-shadow: 0 0 90px rgba(14,0,137,0.06);
+}
+
+
+
+.f-element-wrapper select {
+    width: 100%;
+}
+
+.chkbox-wrapper ul {
+    width: 100%;
+}
+
+
+
+
+
+
+/* Checkbox */
+.form-check-switch {
+    display: inline-block;
+    width: 44px;
+    height: 24px;
+    position: relative;
+  }
+  .form-check-switch .form-check-input {
+    display: none;
+  }
+  .form-check-switch .form-check-input:checked + .form-check-label:after {
+    left: 50%;
+  }
+  .form-check-switch .form-check-label {
+    border-radius: 12px;
+    position: absolute;
+    white-space: nowrap;
+    font-size: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    background: #ccc;
+    transition: all .3s ease;
+  }
+  .form-check-switch .form-check-label:after {
+    background: #fff;
+    border-radius: 50%;
+    content: "";
+    top: 2px;
+    left: 2px;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    transition: all .3s ease;
+  }
+  
+  .form-check-primary .form-check-input:checked + .form-check-label {
+    background: #007bff;
+  }
+  
+  .form-check-secondary .form-check-input:checked + .form-check-label {
+    background: #6c757d;
+  }
+  
+  .form-check-success .form-check-input:checked + .form-check-label {
+    background: #28a745;
+  }
+  
+  .form-check-info .form-check-input:checked + .form-check-label {
+    background: #17a2b8;
+  }
+  
+  .form-check-warning .form-check-input:checked + .form-check-label {
+    background: #ffc107;
+  }
+  
+  .form-check-danger .form-check-input:checked + .form-check-label {
+    background: #dc3545;
+  }
+
+  
+  .chkbox-wrapper {
+      height: 400px;
+      margin: 25px auto;
+  }
+/* =========== Cryptodash CSS END =========== */
+
+
+
+
